@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
-import { colors } from '../styles/variables'
+import { colors, breakpoints } from '../styles/variables'
+import { getEmSize } from '../styles/mixins'
 
 const StyledDisplay1 = styled.h1`
   margin-top: 0px;
@@ -12,6 +13,11 @@ const StyledDisplay1 = styled.h1`
   margin-left: -2vw;
   text-align: center;
   color: ${colors.black};
+  line-height: 1.1ch;
+  @media (max-width: ${getEmSize(breakpoints.sm)}em) {
+    margin-left: -5vw;
+    font-size: 17vw;
+  }
 `
 
 // interface Display1Props {

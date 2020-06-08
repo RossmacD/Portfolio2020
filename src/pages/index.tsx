@@ -11,6 +11,8 @@ import Hero from '../components/Hero'
 import ScrollDown from '../components/scrolldown'
 import Showcase from '../components/showcase'
 import HomeButton from '../components/HomeButton'
+import { breakpoints } from '../styles/variables'
+import { getEmSize } from '../styles/mixins'
 
 const FixedDiv = styled.div`
   position: fixed;
@@ -28,13 +30,25 @@ const Row = styled.div`
 const Col = styled.div`
   flex: 0.5;
 `
+const DesktopHide = styled.span`
+  @media (min-width: ${getEmSize(breakpoints.sm)}em) {
+    display: none;
+  }
+`
+
 const IndexPage = () => (
   <IndexLayout>
     <DocflowFix>
       <FixedDiv>
         <Hero>
           <div>
-            <Display1>RossMacD</Display1>
+            <Display1>
+              Ross
+              <DesktopHide>
+                <br />
+              </DesktopHide>
+              MacD<DesktopHide>onald</DesktopHide>
+            </Display1>
             <Display2>
               <span role="img" aria-label="Milkyway">
                 🌌
@@ -69,6 +83,19 @@ const IndexPage = () => (
           <Col>
             {/* <Showcase /> */}
 
+            {/* <HomeButton to="https://github.com/RossmacD" newWindow>
+              Github
+            </HomeButton>
+            <HomeButton to="/collisions" newWindow={false}>
+              Collisions
+            </HomeButton>
+            <HomeButton to="https://laravel.rossmacd.com" newWindow={false}>
+              InvoiceAmigo
+            </HomeButton> */}
+          </Col>
+        </Row>
+        <Row>
+          <Col>
             <HomeButton to="https://github.com/RossmacD" newWindow>
               Github
             </HomeButton>
@@ -77,6 +104,9 @@ const IndexPage = () => (
             </HomeButton>
             <HomeButton to="https://laravel.rossmacd.com" newWindow={false}>
               InvoiceAmigo
+            </HomeButton>
+            <HomeButton to="https://github.com/drinking-game-app" newWindow>
+              Shcoop
             </HomeButton>
           </Col>
         </Row>

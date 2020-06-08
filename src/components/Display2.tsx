@@ -1,8 +1,10 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
+import { getEmSize } from '../styles/mixins'
+import { breakpoints } from '../styles/variables'
 
 const StyledDisplay2 = styled.h2`
-  margin-top: -5.5vw;
+  margin-top: -2vw;
   color: #ff005a;
   margin-bottom: 0px;
   text-transform: uppercase;
@@ -21,6 +23,11 @@ const StyledDisplay2 = styled.h2`
     100% {
       transform: translatey(0px);
     }
+  }
+
+  @media (max-width: ${getEmSize(breakpoints.sm)}em) {
+    margin-left: -5vw;
+    font-size: 6vw;
   }
 `
 
