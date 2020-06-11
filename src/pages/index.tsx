@@ -4,39 +4,16 @@ import * as React from 'react'
 import Page from '../components/Page'
 import Container from '../components/Container'
 import IndexLayout from '../layouts'
-import Display1 from '../components/Display1'
-import Display2 from '../components/Display2'
-import Hero from '../components/Hero'
-import ScrollDown from '../components/scrolldown'
 // import Showcase from '../components/showcase'
 import HomeButton from '../components/HomeButton'
-import { DocflowFix, FixedDiv, DesktopHide, Row } from '../styles/simpleComponents'
+import { DocflowFix, Row } from '../styles/simpleComponents'
 import Col from '../components/Col'
+import HeroTitle from '../components/HeroTitle'
 
 const IndexPage = () => (
   <IndexLayout>
     <DocflowFix>
-      <FixedDiv>
-        <Hero>
-          <div>
-            <Display1>
-              Ross
-              <DesktopHide>
-                <br />
-              </DesktopHide>
-              MacD<DesktopHide>onald</DesktopHide>
-            </Display1>
-            <Display2>
-              <span role="img" aria-label="Milkyway">
-                🌌
-              </span>
-              Full-Stack developer
-            </Display2>
-            {/* https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/milky-way_1f30c.png 2x */}
-          </div>
-        </Hero>
-        <ScrollDown />
-      </FixedDiv>
+      <HeroTitle />
     </DocflowFix>
     <Page>
       <Container>

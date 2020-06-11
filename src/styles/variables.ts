@@ -18,7 +18,8 @@ export const colors = {
     calm: 'rgba(0, 0, 0, 0.54)'
   },
   white: '#fff',
-  black: '#030005'
+  black: '#030005',
+  red: '#ff005a'
 }
 
 export const fonts = {

@@ -1,11 +1,11 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
 import { getEmSize } from '../styles/mixins'
-import { breakpoints } from '../styles/variables'
+import { breakpoints, colors } from '../styles/variables'
 
 const StyledDisplay2 = styled.h2`
   margin-top: -2vw;
-  color: #ff005a;
+  color: ${colors.red};
   margin-bottom: 0px;
   text-transform: uppercase;
   text-shadow: 0px 2px 0px #8400ff;
@@ -26,8 +26,20 @@ const StyledDisplay2 = styled.h2`
   }
 
   @media (max-width: ${getEmSize(breakpoints.sm)}em) {
-    margin-left: -5vw;
-    font-size: 6vw;
+    margin-left: -0vw;
+    font-size: 12vw;
+    margin-top: 10vw;
+
+    @keyframes float {
+      0% {
+        transform: translatey(0px);
+      }
+      50% {
+        transform: translatey(5vw);
+      }
+      100% {
+        transform: translatey(0px);
+      }
   }
 `
 

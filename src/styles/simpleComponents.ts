@@ -36,3 +36,8 @@ export const DesktopHide = styled.span`
     display: none;
   }
 `
+export const DesktopShow = styled.span`
+  @media (max-width: ${getEmSize(breakpoints.sm)}em) {
+    display: none;
+  }
+`
