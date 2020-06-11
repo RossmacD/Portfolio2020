@@ -6,6 +6,14 @@ import Display2 from './Display2'
 import ScrollDown from './scrolldown'
 
 const HeroTitle: React.FC = () => {
+  // componentDidMount() {
+  //   window.addEventListener('scroll', this.listenToScroll)
+  // }
+
+  // componentWillUnmount() {
+  //   window.removeEventListener('scroll', this.listenToScroll)
+  // }
+
   return (
     <FixedDiv>
       <Hero>

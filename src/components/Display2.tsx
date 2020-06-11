@@ -27,15 +27,15 @@ const StyledDisplay2 = styled.h2`
 
   @media (max-width: ${getEmSize(breakpoints.sm)}em) {
     margin-left: -0vw;
-    font-size: 12vw;
-    margin-top: 10vw;
+    font-size: 10vw;
+    margin-top: 8vh;
 
     @keyframes float {
       0% {
         transform: translatey(0px);
       }
       50% {
-        transform: translatey(5vw);
+        transform: translatey(0vh);
       }
       100% {
         transform: translatey(0px);

@@ -14,6 +14,9 @@ export const StyledHero = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: ${getEmSize(breakpoints.sm)}em) {
+    height: 90vh;
+  }
 `
 export const FixedDiv = styled.div`
   position: fixed;
@@ -23,12 +26,15 @@ export const FixedDiv = styled.div`
 export const DocflowFix = styled.div`
   width: 100vw;
   height: 100vh;
+  scroll-snap-align: start;
 `
 
 export const Row = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   grid-gap: 0.5rem;
+  margin-top: 8rem;
+  margin-bottom: 12rem;
 `
 
 export const DesktopHide = styled.span`
@@ -40,4 +46,8 @@ export const DesktopShow = styled.span`
   @media (max-width: ${getEmSize(breakpoints.sm)}em) {
     display: none;
   }
+`
+
+export const ScrollSnapper = styled.span`
+  scroll-snap-type: y mandatory;
 `
