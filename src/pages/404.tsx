@@ -8,26 +8,12 @@ import IndexLayout from '../layouts'
 import Hero from '../components/Hero'
 import Display1 from '../components/Display1'
 import Display2 from '../components/Display2'
+import { DocflowFix, FixedDiv } from '../styles/simpleComponents'
 
-const FixedDiv = styled.div`
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-`
-const DocflowFix = styled.div`
-  width: 100vw;
-  height: 100vh;
-`
 const StyledHeading = styled.h1`
   text-align: center;
 `
 
-// const Row = styled.div`
-//   display: flex;
-// `
-// const Col = styled.div`
-//   flex: 0.5;
-// `
 const NotFoundPage = () => (
   <IndexLayout>
     <DocflowFix>

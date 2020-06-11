@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
 
 const StyledButton = styled.a`
   display: inline-block;
@@ -25,11 +25,11 @@ interface HomeButtonProps {
   newWindow: boolean
 }
 
-const LayoutMain: React.FC<HomeButtonProps> = ({ children, to, newWindow }) => (
+const HomeButton: React.FC<HomeButtonProps> = ({ children, to, newWindow }) => (
   <StyledButton href={to} target={newWindow ? 'href' : ''}>
     {' '}
     {children}{' '}
   </StyledButton>
 )
 
-export default LayoutMain
+export default HomeButton

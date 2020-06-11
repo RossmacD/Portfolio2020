@@ -1,7 +1,6 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
 
-import styled from '@emotion/styled'
 import Page from '../components/Page'
 import Container from '../components/Container'
 import IndexLayout from '../layouts'
@@ -9,32 +8,10 @@ import Display1 from '../components/Display1'
 import Display2 from '../components/Display2'
 import Hero from '../components/Hero'
 import ScrollDown from '../components/scrolldown'
-import Showcase from '../components/showcase'
+// import Showcase from '../components/showcase'
 import HomeButton from '../components/HomeButton'
-import { breakpoints } from '../styles/variables'
-import { getEmSize } from '../styles/mixins'
-
-const FixedDiv = styled.div`
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-`
-const DocflowFix = styled.div`
-  width: 100vw;
-  height: 100vh;
-`
-
-const Row = styled.div`
-  display: flex;
-`
-const Col = styled.div`
-  flex: 0.5;
-`
-const DesktopHide = styled.span`
-  @media (min-width: ${getEmSize(breakpoints.sm)}em) {
-    display: none;
-  }
-`
+import { DocflowFix, FixedDiv, DesktopHide, Row } from '../styles/simpleComponents'
+import Col from '../components/Col'
 
 const IndexPage = () => (
   <IndexLayout>
@@ -64,7 +41,7 @@ const IndexPage = () => (
     <Page>
       <Container>
         <Row>
-          <Col>
+          <Col span={3}>
             <h1>Hi, I'm Ross MacDonald</h1>
             <p>I develop websites, software and apps </p>
             <p>
@@ -79,24 +56,7 @@ const IndexPage = () => (
                 💻
               </span>
             </p>
-          </Col>
-          <Col>
-            {/* <Showcase /> */}
-
             {/* <HomeButton to="https://github.com/RossmacD" newWindow>
-              Github
-            </HomeButton>
-            <HomeButton to="/collisions" newWindow={false}>
-              Collisions
-            </HomeButton>
-            <HomeButton to="https://laravel.rossmacd.com" newWindow={false}>
-              InvoiceAmigo
-            </HomeButton> */}
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <HomeButton to="https://github.com/RossmacD" newWindow>
               Github
             </HomeButton>
             <HomeButton to="/collisions" newWindow={false}>
@@ -107,9 +67,23 @@ const IndexPage = () => (
             </HomeButton>
             <HomeButton to="https://github.com/drinking-game-app" newWindow>
               Shcoop
+            </HomeButton> */}
+          </Col>
+          <Col span={3}>
+            {/* <Showcase /> */}
+
+            <HomeButton to="https://github.com/RossmacD" newWindow>
+              Github
+            </HomeButton>
+            <HomeButton to="/collisions" newWindow={false}>
+              Collisions
+            </HomeButton>
+            <HomeButton to="https://laravel.rossmacd.com" newWindow={false}>
+              InvoiceAmigo
             </HomeButton>
           </Col>
         </Row>
+        <Row />
       </Container>
     </Page>
   </IndexLayout>

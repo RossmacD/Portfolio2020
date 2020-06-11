@@ -39,6 +39,7 @@ const IndexLayout: React.FC = ({ children }) => (
             { name: 'keywords', content: data.site.siteMetadata.keywords }
           ]}
         />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet" />
         {/* <Header title={data.site.siteMetadata.title} /> */}
         <LayoutMain>{children}</LayoutMain>
       </LayoutRoot>
