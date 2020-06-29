@@ -47,7 +47,3 @@ export const DesktopShow = styled.span`
     display: none;
   }
 `
-
-export const ScrollSnapper = styled.span`
-  scroll-snap-type: y mandatory;
-`

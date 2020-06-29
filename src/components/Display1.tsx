@@ -15,8 +15,7 @@ const StyledDisplay1 = styled.h1`
   color: ${colors.black};
   line-height: 1.1ch;
   @media (max-width: ${getEmSize(breakpoints.sm)}em) {
-    margin-left: -2vw;
-    font-size: 16.5vw;
+    font-size: 33vw;
   }
 `
 const StyledSpecial1 = styled.h1`

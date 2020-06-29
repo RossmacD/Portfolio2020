@@ -26,9 +26,9 @@ const StyledDisplay2 = styled.h2`
   }
 
   @media (max-width: ${getEmSize(breakpoints.sm)}em) {
-    margin-left: -0vw;
-    font-size: 10vw;
-    margin-top: 8vh;
+    margin-left: -1vw;
+    font-size: 14vw;
+    margin-top: 2vh;
 
     @keyframes float {
       0% {
