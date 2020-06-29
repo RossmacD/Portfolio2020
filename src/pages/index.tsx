@@ -14,6 +14,7 @@ const IndexPage = () => (
   <IndexLayout>
     <DocflowFix>
       <HeroTitle />
+      {/* <HeroAnimated /> */}
     </DocflowFix>
     <Page>
       <Container>
