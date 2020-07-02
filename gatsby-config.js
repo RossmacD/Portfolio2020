@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
     title: 'Ross MacDonald',
-    description: 'Ross MacDonald, a software developer and web developer',
+    description: 'Ross MacDonald, a fullstack developer',
     keywords: 'web, gatsby, javascript, sample, something',
-    siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com',
+    siteUrl: 'https://rossmacd.com/',
     author: {
       name: 'Ross MacDonald',
-      url: 'https://rossmacd.com.com/',
+      url: 'https://rossmacd.com/',
       email: 'ross@rossmacd.com'
     }
   },
@@ -46,7 +46,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com'
+        siteUrl: 'https://rossmacd.com'
       }
     },
     'gatsby-plugin-emotion',
