@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/contact.tsx"],"names":["Contact"],"mappings":"6FAAA,iCAIeA,UAFC,kBAAM","file":"component---src-pages-contact-tsx-1787c02267208b8f5d71.js","sourcesContent":["import * as React from 'react'\r\n\r\nconst Contact = () => <h1>test</h1>\r\n\r\nexport default Contact\r\n"],"sourceRoot":""}
