@@ -48,3 +48,6 @@ export const DesktopShow = styled.span`
     display: none;
   }
 `
+export const ShadowSpan = styled.span`
+  text-shadow: 3px 3px 0px #8400ff, -1px -1px 0px #ff005a;
+`

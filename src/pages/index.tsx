@@ -5,7 +5,7 @@ import Container from '../components/Container'
 import IndexLayout from '../layouts'
 // import Showcase from '../components/showcase'
 import HomeButton from '../components/HomeButton'
-import { DocflowFix, Row } from '../styles/simpleComponents'
+import { DocflowFix, Row, ShadowSpan } from '../styles/simpleComponents'
 import Col from '../components/Col'
 import HeroTitle from '../components/HeroTitle'
 import { genClass } from '../styles/genericClasses'
@@ -20,13 +20,16 @@ const IndexPage = () => (
       <Container>
         <Row>
           <Col span={3}>
-            <h1>Hi, I'm Ross MacDonald</h1>
+            <h1>
+              Hi, I'm <ShadowSpan>Ross MacDonald</ShadowSpan>
+            </h1>
             <p>I develop websites, software and apps </p>
-            <p>Im an Irish full-stack developer with experience </p>
-            {/* <code>Here is some test code</code> */}
-            {/* <Link to="/page-2/">Here are some projects I have worked on</Link> */}
             <p>
-              Here are some projects I have worked on{' '}
+              Im an Irish full-stack developer who has experience with many technologies. Creating apps as both a leader of development and
+              in a supporting capacity.
+            </p>
+            <p>
+              Here are some projects I have worked on
               <span role="img" aria-label="laptop">
                 💻
               </span>
@@ -35,20 +38,8 @@ const IndexPage = () => (
               See More
             </HomeButton>
           </Col>
-          <Col cssClass={genClass.altBG} span={3}>
-            <p>HEASD</p>
-            {/* <Showcase /> */}
-
-            {/* <HomeButton to="https://github.com/RossmacD" newWindow>
-                Github
-              </HomeButton>
-              <HomeButton to="/collisions" newWindow={false}>
-                Collisions
-              </HomeButton>
-              <HomeButton to="https://laravel.rossmacd.com" newWindow={false}>
-                InvoiceAmigo
-              </HomeButton> */}
-          </Col>
+          {/* <Col cssClass={genClass.altBG} span={3} /> */}
+          <Col span={3} />
         </Row>
         <Row>
           <Col span={3}>{/* temp */}</Col>
@@ -58,6 +49,9 @@ const IndexPage = () => (
             <p>
               I have experience in many languages like Typescript, Javascript, Node, Java, PHP and Rust. I know technologies like React.js,
               React Native, Vue.js, Socket.IO, Pusher, MongoDb and MySQL / Postgres. In fact I made this site using React.js and Gatsby!
+            </p>
+            <p>
+              I can also help with deployment, having used continous integration workflows and having some experience with docker and linux
             </p>
           </Col>
         </Row>

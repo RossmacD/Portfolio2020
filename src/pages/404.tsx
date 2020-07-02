@@ -2,8 +2,6 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 
 import styled from '@emotion/styled'
-import Page from '../components/Page'
-import Container from '../components/Container'
 import IndexLayout from '../layouts'
 import Hero from '../components/Hero'
 import Display1 from '../components/Display1'
@@ -21,11 +19,11 @@ const NotFoundPage = () => (
         <Hero>
           <div>
             <Display2>
-              <span role="img" aria-label="Milkyway">
+              <span role="img" aria-label="Exploding head">
                 🤯
               </span>
               Error
-              <span role="img" aria-label="Milkyway">
+              <span role="img" aria-label="Exploding head">
                 🤯
               </span>
             </Display2>
@@ -40,9 +38,6 @@ const NotFoundPage = () => (
         </Hero>
       </FixedDiv>
     </DocflowFix>
-    <Page>
-      <Container>{/* <HomeButton /> */}</Container>
-    </Page>
   </IndexLayout>
 )
 

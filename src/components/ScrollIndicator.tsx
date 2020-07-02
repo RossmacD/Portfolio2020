@@ -11,7 +11,7 @@ const Arrow = styled.a`
   left: 47vw;
   transform: rotate(135deg);
   opacity: 0%;
-  animation: fade-in 3s ease-in 2s 1 forwards;
+  animation: fade-in 6s ease-in 1s 1 forwards;
 
   &::before {
     content: '';
@@ -45,11 +45,13 @@ const Arrow = styled.a`
     border-color: ${colors.red};
     height: 120%;
     margin-top: 0.6vmin;
+    opacity: 100%;
   }
 
   &:hover::before {
     border-color: ${colors.red};
     transform: scale(0.8);
+    opacity: 100%;
   }
 
   @keyframes fade-in {
