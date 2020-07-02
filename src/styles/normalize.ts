@@ -5,6 +5,8 @@ export default `
   html {
     box-sizing: border-box;
     scroll-behavior: smooth;
+    width:100vw;
+    overflow-x:hidden;
   }
 
   *,

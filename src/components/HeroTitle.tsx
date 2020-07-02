@@ -4,6 +4,7 @@ import Hero from './Hero'
 import Display1 from './Display1'
 import Display2 from './Display2'
 import ScrollDown from './scrolldown'
+import ScrollIndicator from './ScrollIndicator'
 
 const HeroTitle: React.FC = () => {
   // componentDidMount() {
@@ -24,12 +25,11 @@ const HeroTitle: React.FC = () => {
           <Display1>
             <DesktopShow>Ross</DesktopShow>
             MacD
-            {/* MacD<DesktopHide>onald</DesktopHide> */}
           </Display1>
           <Display2>Full-Stack developer</Display2>
         </div>
       </Hero>
-      <ScrollDown />
+      <ScrollIndicator />
     </FixedDiv>
   )
 }
