@@ -3,18 +3,9 @@ import { StyledHero, FixedDiv, DesktopHide, DesktopShow } from '../styles/simple
 import Hero from './Hero'
 import Display1 from './Display1'
 import Display2 from './Display2'
-import ScrollDown from './scrolldown'
 import ScrollIndicator from './ScrollIndicator'
 
 const HeroTitle: React.FC = () => {
-  // componentDidMount() {
-  //   window.addEventListener('scroll', this.listenToScroll)
-  // }
-
-  // componentWillUnmount() {
-  //   window.removeEventListener('scroll', this.listenToScroll)
-  // }
-
   return (
     <FixedDiv>
       <Hero>

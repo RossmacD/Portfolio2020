@@ -45,11 +45,13 @@ const Arrow = styled.a`
     border-color: ${colors.red};
     height: 120%;
     margin-top: 0.6vmin;
+    opacity: 100%;
   }
 
   &:hover::before {
     border-color: ${colors.red};
     transform: scale(0.8);
+    opacity: 100%;
   }
 
   @keyframes fade-in {
