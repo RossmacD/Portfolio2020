@@ -40,9 +40,9 @@ const NotFoundPage = () => (
         </Hero>
       </FixedDiv>
     </DocflowFix>
-    <Page>
-      <Container>{/* <HomeButton /> */}</Container>
-    </Page>
+    {/* <Page>
+      <Container></Container>
+    </Page> */}
   </IndexLayout>
 )
 
