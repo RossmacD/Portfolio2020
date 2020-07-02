@@ -35,6 +35,7 @@ export const Row = styled.div`
   grid-gap: 0.5rem;
   margin-top: 8rem;
   margin-bottom: 12rem;
+  grid-auto-rows: 1fr;
 `
 
 export const DesktopHide = styled.span`
