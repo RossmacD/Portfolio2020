@@ -11,7 +11,7 @@ const Arrow = styled.a`
   left: 47vw;
   transform: rotate(135deg);
   opacity: 0%;
-  animation: fade-in 3s ease-in 2s 1 forwards;
+  animation: fade-in 6s ease-in 1s 1 forwards;
 
   &::before {
     content: '';

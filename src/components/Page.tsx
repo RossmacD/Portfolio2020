@@ -8,8 +8,9 @@ const StyledPage = styled.div`
   flex: 1;
   position: relative;
   padding: ${dimensions.containerPadding}rem;
-  margin-bottom: 3rem;
+  padding-bottom: 4rem;
   background-color: ${colors.black};
+  border-top: 1px solid ${colors.altWhite.trans};
 `
 
 interface PageProps {

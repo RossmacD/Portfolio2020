@@ -1,5 +1,7 @@
 /* eslint-disable max-len */
 
+import { rgba } from 'polished'
+
 export const colors = {
   brand: '#8400ff',
   lilac: '#9d7cbf',
@@ -18,6 +20,9 @@ export const colors = {
     calm: 'rgba(0, 0, 0, 0.54)'
   },
   white: '#fff',
+  altWhite: {
+    trans: 'rgba(255,255,255,0.3)'
+  },
   black: '#030005',
   red: '#ff005a'
 }
