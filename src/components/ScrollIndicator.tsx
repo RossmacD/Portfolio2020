@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
+import { useTrackVisibility } from 'react-intersection-observer-hook'
 import { colors } from '../styles/variables'
 
 const Arrow = styled.a`
@@ -11,8 +12,8 @@ const Arrow = styled.a`
   left: 47vw;
   transform: rotate(135deg);
   opacity: 0%;
-  animation: fade-in 6s ease-in 1s 1 forwards;
 
+  cursor: pointer;
   &::before {
     content: '';
     width: 100%;
@@ -45,15 +46,16 @@ const Arrow = styled.a`
     border-color: ${colors.red};
     height: 120%;
     margin-top: 0.6vmin;
-    opacity: 100%;
   }
 
   &:hover::before {
     border-color: ${colors.red};
     transform: scale(0.8);
-    opacity: 100%;
   }
-
+  &:hover {
+    opacity: 100%;
+    animation: none;
+  }
   @keyframes fade-in {
     0% {
       opacity: 0%;
@@ -62,8 +64,33 @@ const Arrow = styled.a`
       opacity: 80%;
     }
   }
+
+  ${(props: ArrowProps) => [props.hovered ? `animation:none;opacity:100%` : ` animation: fade-in 6s ease-in 1s 1 forwards;`]}
 `
 
-const ScrollIndicator: React.FC = () => <Arrow href="#1" />
+interface TriggerProps {
+  trigger: (state: boolean) => void
+}
+
+interface ArrowProps {
+  hovered: boolean
+}
+
+const ScrollIndicator: React.FC<TriggerProps> = ({ trigger }) => {
+  const [hovered, setHovered] = React.useState(false)
+
+  return (
+    <Arrow
+      hovered={hovered}
+      onMouseEnter={() => setHovered(true)}
+      onClick={() => {
+        trigger(true)
+        setTimeout(() => {
+          window.location.href = '#1'
+        }, 300)
+      }}
+    />
+  )
+}
 
 export default ScrollIndicator

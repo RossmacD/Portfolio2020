@@ -15,7 +15,7 @@ const IndexPage = () => {
   return (
     <IndexLayout>
       <DocflowFix>
-        <HeroTitle hide={hideHero} />
+        <HeroTitle hide={hideHero} trigger={setHideHero} />
       </DocflowFix>
       <Page>
         <Container>

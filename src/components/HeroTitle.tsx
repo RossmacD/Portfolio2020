@@ -7,24 +7,27 @@ import ScrollIndicator from './ScrollIndicator'
 
 interface HeroTitleProps {
   hide: boolean
+  trigger: (state: boolean) => void
 }
 
-const HeroTitle: React.FC<HeroTitleProps> = ({ hide }) => {
+const HeroTitle: React.FC<HeroTitleProps> = ({ hide, trigger }) => {
   return (
     <FixedDiv>
       <Hero>
         <div>
           <DesktopHide>
-            <Display1 special>Ross</Display1>
+            <Display1 special hide={hide}>
+              Ross
+            </Display1>
           </DesktopHide>
-          <Display1>
+          <Display1 hide={hide}>
             <DesktopShow>Ross</DesktopShow>
             MacD
           </Display1>
           <Display2 hide={hide}>Full-Stack developer</Display2>
         </div>
       </Hero>
-      <ScrollIndicator />
+      <ScrollIndicator trigger={trigger} />
     </FixedDiv>
   )
 }

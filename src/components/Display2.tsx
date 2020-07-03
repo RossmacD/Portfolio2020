@@ -12,7 +12,6 @@ const StyledDisplay2 = styled.h2`
   font-size: 5vw;
   text-align: center;
   font-weight: 700;
-
   @media (min-width: ${getEmSize(breakpoints.sm)}em) {
     animation: float 10s ease-in-out infinite;
     @keyframes float {
@@ -34,22 +33,18 @@ const StyledDisplay2 = styled.h2`
     margin-top: 2vh;
   }
 
-  ${(props: Display1Props) => {
+  ${(props: Display2Props) => {
     return props.hide
       ? `
-      animation: fadeout 1.5s ease-out forwards;
+      animation: fadeout 0.5s ease-out forwards!important;
       @keyframes fadeout {
         0% {
           opacity: 100%;
         }
-        30% {
-          opacity: 80%;
-          transform:translate3d(0,-25vw,-35vw)
-        }
         99% {
           display: block;
           opacity: 0;
-          transform:translate3d(0,-30vw,-40vw)
+          transform:translateY(-5vh)
         }
         100% {
           opacity: 0;
@@ -63,11 +58,11 @@ const StyledDisplay2 = styled.h2`
   }}
 `
 
-interface Display1Props {
+interface Display2Props {
   hide: boolean
 }
 
-const Display2: React.FC<Display1Props> = ({ children, hide }) => {
+const Display2: React.FC<Display2Props> = ({ children, hide }) => {
   React.useEffect(() => {
     // console.log(hide)
   }, [hide])
