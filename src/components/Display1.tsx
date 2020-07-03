@@ -1,5 +1,7 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
+import { useTrackVisibility } from 'react-intersection-observer-hook'
+// import { useEffect } from 'react'
 import { colors, breakpoints } from '../styles/variables'
 import { getEmSize } from '../styles/mixins'
 
@@ -38,6 +40,7 @@ const Display1: React.FC<Display1Props> = ({ children, special }) => {
   if (!special) {
     return <StyledDisplay1>{children}</StyledDisplay1>
   }
+
   return <StyledSpecial1>{children}</StyledSpecial1>
 }
 

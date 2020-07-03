@@ -160,4 +160,8 @@ export default `
       padding-left: 1.25rem;
     }
   }
+
+  .hideAnimD1{
+    opacity:0%
+  }
 `

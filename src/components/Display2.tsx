@@ -12,16 +12,19 @@ const StyledDisplay2 = styled.h2`
   font-size: 5vw;
   text-align: center;
   font-weight: 700;
-  animation: float 10s ease-in-out infinite;
-  @keyframes float {
-    0% {
-      transform: translatey(0px);
-    }
-    50% {
-      transform: translatey(2vw);
-    }
-    100% {
-      transform: translatey(0px);
+
+  @media (min-width: ${getEmSize(breakpoints.sm)}em) {
+    animation: float 10s ease-in-out infinite;
+    @keyframes float {
+      0% {
+        transform: translatey(0px);
+      }
+      50% {
+        transform: translatey(2vw);
+      }
+      100% {
+        transform: translatey(0px);
+      }
     }
   }
 
@@ -29,24 +32,46 @@ const StyledDisplay2 = styled.h2`
     margin-left: -1vw;
     font-size: 14vw;
     margin-top: 2vh;
-
-    @keyframes float {
-      0% {
-        transform: translatey(0px);
-      }
-      50% {
-        transform: translatey(0vh);
-      }
-      100% {
-        transform: translatey(0px);
-      }
   }
+
+  ${(props: Display1Props) => {
+    return props.hide
+      ? `
+      animation: fadeout 1.5s ease-out forwards;
+      @keyframes fadeout {
+        0% {
+          opacity: 100%;
+        }
+        30% {
+          opacity: 80%;
+          transform:translate3d(0,-25vw,-35vw)
+        }
+        99% {
+          display: block;
+          opacity: 0;
+          transform:translate3d(0,-30vw,-40vw)
+        }
+        100% {
+          opacity: 0;
+          display: none;
+        }
+      }
+    `
+      : `
+
+    `
+  }}
 `
 
-// interface Display1Props {
-//   text: string
-// }
+interface Display1Props {
+  hide: boolean
+}
 
-const Display2: React.FC = ({ children }) => <StyledDisplay2>{children}</StyledDisplay2>
+const Display2: React.FC<Display1Props> = ({ children, hide }) => {
+  React.useEffect(() => {
+    // console.log(hide)
+  }, [hide])
+  return <StyledDisplay2 hide={hide}>{children}</StyledDisplay2>
+}
 
 export default Display2

@@ -1,11 +1,15 @@
 import * as React from 'react'
-import { StyledHero, FixedDiv, DesktopHide, DesktopShow } from '../styles/simpleComponents'
+import { FixedDiv, DesktopHide, DesktopShow } from '../styles/simpleComponents'
 import Hero from './Hero'
 import Display1 from './Display1'
 import Display2 from './Display2'
 import ScrollIndicator from './ScrollIndicator'
 
-const HeroTitle: React.FC = () => {
+interface HeroTitleProps {
+  hide: boolean
+}
+
+const HeroTitle: React.FC<HeroTitleProps> = ({ hide }) => {
   return (
     <FixedDiv>
       <Hero>
@@ -17,7 +21,7 @@ const HeroTitle: React.FC = () => {
             <DesktopShow>Ross</DesktopShow>
             MacD
           </Display1>
-          <Display2>Full-Stack developer</Display2>
+          <Display2 hide={hide}>Full-Stack developer</Display2>
         </div>
       </Hero>
       <ScrollIndicator />

@@ -53,6 +53,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-intersection-observer-hook": "^1.0.4",
     "typescript": "^3.5.2"
   },
   "devDependencies": {
