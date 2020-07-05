@@ -43,15 +43,14 @@ const IndexPage = () => {
                 See More
               </HomeButton>
             </Col>
-            <Col span={3}>
-              <RCanvas />
-              <RCanvas />
-              <RCanvas />
+            <Col span={3} cssClass={genClass.flexCenter}>
               <RCanvas />
             </Col>
           </Row>
           <Row>
-            <Col span={3} />
+            <Col span={3} cssClass={genClass.flexCenter}>
+              {/* <RCanvas /> */}
+            </Col>
             <Col span={3}>
               <h1>You do the Full-stack?</h1>
               <p>Yep, I have experience with front-end, backend and the networking side of things</p>
@@ -72,8 +71,9 @@ const IndexPage = () => {
             <Col span={6}>
               <h1>
                 <ShadowSpan>Contact Me</ShadowSpan>
-                <AltHomeButton to="contact">Contact Now</AltHomeButton>
               </h1>
+              <p>Let's start working!</p>
+              <AltHomeButton to="contact">Contact Now</AltHomeButton>
             </Col>
           </Row>
         </Container>

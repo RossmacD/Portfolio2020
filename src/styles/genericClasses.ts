@@ -11,5 +11,9 @@ export const genClass: CssClassList = {
   redBG: `
   background-color: ${colors.red};
 `,
-  test: `test`
+  flexCenter: `
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  `
 }
