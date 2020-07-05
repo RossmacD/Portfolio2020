@@ -1,21 +1,21 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
-
-import { Grid } from '../styles/simpleComponents'
-
-// const StyledContainer = styled.div`
-//   position: relative;
-//   margin-left: auto;
-//   margin-right: auto;
-//   margin-top: 150px;
-//   width: auto;
-//   max-width: ${getEmSize(widths.lg)}em;
-// `
+import { getEmSize } from '../styles/mixins'
+import { widths } from '../styles/variables'
 
 interface ContainerProps {
-  className?: string
+  cssClass?: string
 }
 
-const Container: React.FC<ContainerProps> = ({ children, className }) => <Grid className={className}>{children}</Grid>
+const Grid = styled.div`
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: ${getEmSize(widths.lg)}em;
+  width: auto;
+  ${(props: ContainerProps) => props.cssClass || ''}
+`
+
+const Container: React.FC<ContainerProps> = ({ children, cssClass }) => <Grid cssClass={cssClass}>{children}</Grid>
 
 export default Container

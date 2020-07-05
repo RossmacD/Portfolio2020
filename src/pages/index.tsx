@@ -5,10 +5,14 @@ import Container from '../components/Container'
 import IndexLayout from '../layouts'
 // import Showcase from '../components/showcase'
 import HomeButton from '../components/HomeButton'
-import { DocflowFix, Row } from '../styles/simpleComponents'
+import { DocflowFix, ShadowSpan } from '../styles/simpleComponents'
 import Col from '../components/Col'
 import HeroTitle from '../components/HeroTitle'
 import VisibilityTrigger from '../components/VisibilityTrigger'
+import RCanvas from '../components/RCanvas'
+import { genClass } from '../styles/genericClasses'
+import { Row } from '../components/Row'
+import AltHomeButton from '../components/AltHomeButton copy'
 
 const IndexPage = () => {
   const [hideHero, setHideHero] = React.useState(false)
@@ -39,7 +43,12 @@ const IndexPage = () => {
                 See More
               </HomeButton>
             </Col>
-            <Col span={3} />
+            <Col span={3}>
+              <RCanvas />
+              <RCanvas />
+              <RCanvas />
+              <RCanvas />
+            </Col>
           </Row>
           <Row>
             <Col span={3} />
@@ -55,6 +64,16 @@ const IndexPage = () => {
                 I can also help with deployment, having used continous integration workflows and having some experience with docker and
                 linux
               </p>
+            </Col>
+          </Row>
+        </Container>
+        <Container cssClass={genClass.redBG}>
+          <Row>
+            <Col span={6}>
+              <h1>
+                <ShadowSpan>Contact Me</ShadowSpan>
+                <AltHomeButton to="contact">Contact Now</AltHomeButton>
+              </h1>
             </Col>
           </Row>
         </Container>

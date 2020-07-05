@@ -8,5 +8,8 @@ export const genClass: CssClassList = {
   altBG: `
     background-color: ${colors.white};
   `,
+  redBG: `
+  background-color: ${colors.red};
+`,
   test: `test`
 }
