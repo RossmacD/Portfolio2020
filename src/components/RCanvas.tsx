@@ -94,7 +94,7 @@ const RCanvas: React.FC = React.memo(() => {
 
       const prerender = () => {
         Perlin.seed(Math.random())
-        for (let index = 1; index <= 50; index += 1) {
+        for (let index = 1; index <= 100; index += 1) {
           const p1 = {
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
@@ -105,6 +105,11 @@ const RCanvas: React.FC = React.memo(() => {
             x: p1.x,
             y: p1.y,
             a: Math.PI
+          })
+          particles.push({
+            x: p1.x,
+            y: p1.y,
+            a: Math.PI * 2
           })
         }
         render()

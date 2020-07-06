@@ -20,11 +20,12 @@ const StyledDisplay1 = styled.h1`
       font-size: 41.25vw;
   `
       : `
-      margin-left: -4.5vw;
+      margin-right: 2vw;
       letter-spacing: -2.3vw;
       font-size: 15vw;
       @media (max-width: ${getEmSize(breakpoints.sm)}em) {
         font-size: 33vw;
+        margin-left: -4.5vw;
       }
   `}
 
