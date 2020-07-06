@@ -5,9 +5,6 @@ import Hero from './Hero'
 import Display1 from './Display1'
 import ScrollIndicator from './ScrollIndicator'
 import RCanvas from './RCanvas'
-import { animOne } from '../animations/helpers'
-import { getEmSize } from '../styles/mixins'
-import { breakpoints } from '../styles/variables'
 
 interface HeroTitleProps {
   hide: boolean
@@ -18,7 +15,7 @@ const HeroTitle: React.FC<HeroTitleProps> = ({ hide, trigger }) => {
   return (
     <FixedDiv>
       <Hero>
-        <RCanvas animation={animOne} />
+        <RCanvas />
         <div
           css={css`
             background: black;

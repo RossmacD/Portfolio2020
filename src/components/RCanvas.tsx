@@ -12,13 +12,14 @@ const StyledCanvas = styled.canvas`
   z-index: -1;
 `
 
-interface RCanvasProps {
-  animation: (canvasRef: React.RefObject<HTMLCanvasElement>) => () => void
-}
+// interface RCanvasProps {
+//   // animation: (canvasRef: React.RefObject<HTMLCanvasElement>) => () => void
+// }
 
-const RCanvas: React.FC<RCanvasProps> = ({ animation }) => {
+const RCanvas: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const { height, width } = useWindowDimensions()
+
+  const { height, width } = typeof window !== 'undefined' && window ? useWindowDimensions() : { height: 0, width: 0 }
   // We force the type as it is always typecheckd before use
   const [canvas, setCanvas] = useState<HTMLCanvasElement | undefined>(undefined)
   const [ctx, setCtx] = useState<CanvasRenderingContext2D | undefined>(undefined)
@@ -57,7 +58,7 @@ const RCanvas: React.FC<RCanvasProps> = ({ animation }) => {
         // eslint-disable-next-line no-restricted-syntax
         for (const p of particles) {
           const v = Perlin.perlin2(p.x * period, p.y * period)
-          // ctx.fillStyle = `hsla(${Math.floor(v * 360)}, 95%, 20%, 0.5)`
+          // ctx.fillStyle = `hsla(${Math.floor(v * 360)}, 95%, 80%, 0.8)`
           ctx.fillStyle = `white`
           ctx.fillRect(p.x, p.y, 1.5, 1.5)
           const a = v * 2 * Math.PI + p.a
