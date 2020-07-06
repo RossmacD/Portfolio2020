@@ -1,11 +1,11 @@
 import * as React from 'react'
-import { css } from '@emotion/core'
 import { FixedDiv, DesktopHide, DesktopShow } from '../styles/simpleComponents'
 import Hero from './Hero'
 import Display1 from './Display1'
 import ScrollIndicator from './ScrollIndicator'
 import RCanvas from './RCanvas'
 import Display2 from './Display2'
+import HeroTextBounds from './HeroTextBounds'
 
 interface HeroTitleProps {
   hide: boolean
@@ -17,12 +17,7 @@ const HeroTitle: React.FC<HeroTitleProps> = ({ hide, trigger }) => {
     <FixedDiv>
       <Hero>
         <RCanvas />
-        <div
-          css={css`
-            background: black;
-            padding: 1em 2em;
-          `}
-        >
+        <HeroTextBounds>
           <DesktopHide>
             <Display1 special hide={hide}>
               Ross
@@ -33,7 +28,7 @@ const HeroTitle: React.FC<HeroTitleProps> = ({ hide, trigger }) => {
             MacD
           </Display1>
           <Display2 hide={hide}>Full-Stack developer</Display2>
-        </div>
+        </HeroTextBounds>
       </Hero>
       <ScrollIndicator trigger={trigger} />
     </FixedDiv>

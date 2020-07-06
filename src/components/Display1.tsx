@@ -11,6 +11,23 @@ const StyledDisplay1 = styled.h1`
   text-align: center;
   color: ${colors.white};
   line-height: 1.1ch;
+  opacity: 0;
+  animation: fadein2 0.5s ease-out 0.2s forwards !important;
+  @keyframes fadein2 {
+    0% {
+      opacity: 0;
+      display: none;
+    }
+    1% {
+      display: block;
+      opacity: 0;
+      transform: translateY(5vh);
+    }
+    100% {
+      opacity: 100%;
+      transform: translateY(0);
+    }
+  }
 
   ${(props: Display1Props) =>
     props.special
@@ -32,6 +49,7 @@ const StyledDisplay1 = styled.h1`
   ${(props: Display1Props) =>
     props.hide
       ? `
+      opacity:100%;
       animation: fadeout2 0.5s ease-out 0.2s forwards!important;
       @keyframes fadeout2 {
         0% {

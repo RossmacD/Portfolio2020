@@ -2,10 +2,8 @@ import React, { useEffect, useRef, useState } from 'react'
 import styled from '@emotion/styled'
 // import { render } from 'react-dom'
 import Perlin from 'perlin.js'
-import rgb from 'polished/lib/color/rgb'
 import useWindowDimensions from '../utils/WindowDimensions'
 import { sharedSetup, Particle } from '../animations/helpers'
-import { colorGradient } from '../utils/helpers'
 
 const StyledCanvas = styled.canvas`
   // width: '100px';
@@ -47,29 +45,15 @@ const RCanvas: React.FC = React.memo(() => {
     if (canvas && ctx) {
       // Continuous variables
       let requestId = 0
-      let counter = 0
       const particles: Particle[] = []
 
       const render = () => {
         // ctx.clearRect(0, 0, canvas.width, canvas.height)
-        // ctx.beginPath()
-        // ctx.arc(canvas.width / 2, canvas.height / 2, (canvas.height / 6) * Math.abs(Math.cos(counter)), 0, 2 * Math.PI)
-        // ctx.fillStyle = 'white'
-        // ctx.fill()
+
         const period = 0.02
         // eslint-disable-next-line no-restricted-syntax
         for (const p of particles) {
           const v = Perlin.perlin2(p.x * period, p.y * period)
-          // ctx.fillStyle = `hsla(${Math.floor(v * 360)}, 95%, 80%, 0.8)`
-          // const color = colorGradient(
-          //   Math.abs(Math.floor(v * 100 * 2)),
-          //   { red: 255, green: 255, blue: 255 },
-          //   { red: 255, green: 0, blue: 90 },
-          //   { red: 9, green: 9, blue: 121 }
-          // )
-
-          // ctx.fillStyle = `rgb(${color.red},${color.green},${color.blue})`
-          // console.log(color.red)
           ctx.fillStyle = `white`
           ctx.fillRect(p.x, p.y, 1.5, 1.5)
           const a = v * 2 * Math.PI + p.a
@@ -79,16 +63,9 @@ const RCanvas: React.FC = React.memo(() => {
             p.x = Math.random() * canvas.width
             p.y = Math.random() * canvas.height
           }
-          // if ( (p.x <= 0 )&& p.x < canvas.width && p.y >= 0 && p.y < h))) {
-          //   p.x = Math.random() * canvas.width
-          //   p.y = Math.random() * canvas.height
-          // }
-          //   _results.push(void 0)
-          // }
         }
 
         // update
-        counter += 0.05
         requestId = requestAnimationFrame(render)
       }
 

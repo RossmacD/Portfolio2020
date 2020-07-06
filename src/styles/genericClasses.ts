@@ -10,10 +10,15 @@ export const genClass: CssClassList = {
   `,
   redBG: `
   background-color: ${colors.red};
+
 `,
   flexCenter: `
   display:flex;
   align-items:center;
   justify-content:center;
+  `,
+  minContainer: `
+  margin-top: 4rem;
+  margin-bottom:6rem;
   `
 }
