@@ -2,8 +2,10 @@ import React, { useEffect, useRef, useState } from 'react'
 import styled from '@emotion/styled'
 // import { render } from 'react-dom'
 import Perlin from 'perlin.js'
+import rgb from 'polished/lib/color/rgb'
 import useWindowDimensions from '../utils/WindowDimensions'
 import { sharedSetup, Particle } from '../animations/helpers'
+import { colorGradient } from '../utils/helpers'
 
 const StyledCanvas = styled.canvas`
   // width: '100px';
@@ -16,7 +18,7 @@ const StyledCanvas = styled.canvas`
 //   // animation: (canvasRef: React.RefObject<HTMLCanvasElement>) => () => void
 // }
 
-const RCanvas: React.FC = () => {
+const RCanvas: React.FC = React.memo(() => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   const { height, width } = typeof window !== 'undefined' && window ? useWindowDimensions() : { height: 0, width: 0 }
@@ -59,6 +61,15 @@ const RCanvas: React.FC = () => {
         for (const p of particles) {
           const v = Perlin.perlin2(p.x * period, p.y * period)
           // ctx.fillStyle = `hsla(${Math.floor(v * 360)}, 95%, 80%, 0.8)`
+          // const color = colorGradient(
+          //   Math.abs(Math.floor(v * 100 * 2)),
+          //   { red: 255, green: 255, blue: 255 },
+          //   { red: 255, green: 0, blue: 90 },
+          //   { red: 9, green: 9, blue: 121 }
+          // )
+
+          // ctx.fillStyle = `rgb(${color.red},${color.green},${color.blue})`
+          // console.log(color.red)
           ctx.fillStyle = `white`
           ctx.fillRect(p.x, p.y, 1.5, 1.5)
           const a = v * 2 * Math.PI + p.a
@@ -83,7 +94,7 @@ const RCanvas: React.FC = () => {
 
       const prerender = () => {
         Perlin.seed(Math.random())
-        for (let index = 1; index <= 100; index += 1) {
+        for (let index = 1; index <= 50; index += 1) {
           const p1 = {
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
@@ -107,6 +118,6 @@ const RCanvas: React.FC = () => {
   }, [canvas, ctx])
 
   return <StyledCanvas ref={canvasRef} height={Math.floor(height * 0.8)} width={width} />
-}
+})
 
 export default RCanvas
