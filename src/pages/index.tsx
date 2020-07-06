@@ -9,10 +9,11 @@ import { DocflowFix, ShadowSpan } from '../styles/simpleComponents'
 import Col from '../components/Col'
 import HeroTitle from '../components/HeroTitle'
 import VisibilityTrigger from '../components/VisibilityTrigger'
-import RCanvas from '../components/RCanvas'
+// import RCanvas from '../components/RCanvas'
 import { genClass } from '../styles/genericClasses'
 import { Row } from '../components/Row'
 import AltHomeButton from '../components/AltHomeButton copy'
+// import { animOne } from '../animations/helpers'
 
 const IndexPage = () => {
   const [hideHero, setHideHero] = React.useState(false)
@@ -44,7 +45,7 @@ const IndexPage = () => {
               </HomeButton>
             </Col>
             <Col span={3} cssClass={genClass.flexCenter}>
-              <RCanvas />
+              {/* <RCanvas animation={animOne} /> */}
             </Col>
           </Row>
           <Row>
