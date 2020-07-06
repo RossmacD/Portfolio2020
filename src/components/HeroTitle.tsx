@@ -1,10 +1,13 @@
 import * as React from 'react'
+import { css } from '@emotion/core'
 import { FixedDiv, DesktopHide, DesktopShow } from '../styles/simpleComponents'
 import Hero from './Hero'
 import Display1 from './Display1'
 import ScrollIndicator from './ScrollIndicator'
 import RCanvas from './RCanvas'
 import { animOne } from '../animations/helpers'
+import { getEmSize } from '../styles/mixins'
+import { breakpoints } from '../styles/variables'
 
 interface HeroTitleProps {
   hide: boolean
@@ -16,7 +19,12 @@ const HeroTitle: React.FC<HeroTitleProps> = ({ hide, trigger }) => {
     <FixedDiv>
       <Hero>
         <RCanvas animation={animOne} />
-        <div>
+        <div
+          css={css`
+            background: black;
+            padding: 1em 2em;
+          `}
+        >
           <DesktopHide>
             <Display1 special hide={hide}>
               Ross

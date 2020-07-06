@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styled from '@emotion/styled'
 // import { render } from 'react-dom'
+import Perlin from 'perlin.js'
 import useWindowDimensions from '../utils/WindowDimensions'
 import { sharedSetup, Particle } from '../animations/helpers'
 
@@ -52,8 +53,26 @@ const RCanvas: React.FC<RCanvasProps> = ({ animation }) => {
         // ctx.arc(canvas.width / 2, canvas.height / 2, (canvas.height / 6) * Math.abs(Math.cos(counter)), 0, 2 * Math.PI)
         // ctx.fillStyle = 'white'
         // ctx.fill()
-
-        for (const particle in particles) {
+        const period = 0.02
+        // eslint-disable-next-line no-restricted-syntax
+        for (const p of particles) {
+          const v = Perlin.perlin2(p.x * period, p.y * period)
+          // ctx.fillStyle = `hsla(${Math.floor(v * 360)}, 95%, 20%, 0.5)`
+          ctx.fillStyle = `white`
+          ctx.fillRect(p.x, p.y, 1.5, 1.5)
+          const a = v * 2 * Math.PI + p.a
+          p.x += 10 * Math.cos(a)
+          p.y += 10 * Math.sin(a)
+          if (p.x < 0 || p.x > canvas.width || p.y < 0 || p.y > canvas.height) {
+            p.x = Math.random() * canvas.width
+            p.y = Math.random() * canvas.height
+          }
+          // if ( (p.x <= 0 )&& p.x < canvas.width && p.y >= 0 && p.y < h))) {
+          //   p.x = Math.random() * canvas.width
+          //   p.y = Math.random() * canvas.height
+          // }
+          //   _results.push(void 0)
+          // }
         }
 
         // update
@@ -62,6 +81,7 @@ const RCanvas: React.FC<RCanvasProps> = ({ animation }) => {
       }
 
       const prerender = () => {
+        Perlin.seed(Math.random())
         for (let index = 1; index <= 100; index += 1) {
           const p1 = {
             x: Math.random() * canvas.width,
