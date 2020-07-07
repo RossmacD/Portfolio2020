@@ -14,6 +14,9 @@ import VisibilityTrigger from '../components/VisibilityTrigger'
 import { genClass } from '../styles/genericClasses'
 import { Row } from '../components/Row'
 import AltHomeButton from '../components/AltHomeButton copy'
+import { colors } from '../styles/variables'
+import ProjectShortCard from '../components/ProjectShortCard'
+import ProjectCarousel from '../components/ProjectCarousel'
 // import { animOne } from '../animations/helpers'
 
 const IndexPage = () => {
@@ -58,27 +61,33 @@ const IndexPage = () => {
           <Container cssClass={genClass.redBG}>
             <Row cssClass={genClass.minContainer}>
               <Col span={6}>
-                <h1>Work</h1>
+                <h1>📝 Projects </h1>
+                <ProjectCarousel />
+                <AltHomeButton to="contact">All</AltHomeButton>
               </Col>
             </Row>
           </Container>
         </div>
-        <Row>
-          <Col span={3} cssClass={genClass.flexCenter}>
-            {/* <RCanvas /> */}
-          </Col>
-          <Col span={3}>
-            <h1>You do the Full-stack?</h1>
-            <p>Yep, I have experience with front-end, backend and the networking side of things</p>
-            <p>
-              I have experience in many languages like Typescript, Javascript, Node, Java, PHP and Rust. I know technologies like React.js,
-              React Native, Vue.js, Socket.IO, Pusher, MongoDb and MySQL / Postgres. In fact I made this site using React.js and Gatsby!
-            </p>
-            <p>
-              I can also help with deployment, having used continous integration workflows and having some experience with docker and linux
-            </p>
-          </Col>
-        </Row>
+        <Container>
+          <Row>
+            <Col span={3} cssClass={genClass.flexCenter}>
+              {/* <RCanvas /> */}
+            </Col>
+            <Col span={3}>
+              <h1>You do the Full-stack?</h1>
+              <p>Yep, I have experience with front-end, backend and the networking side of things</p>
+              <p>
+                I have experience in many languages like Typescript, Javascript, Node, Java, PHP and Rust. I know technologies like
+                React.js, React Native, Vue.js, Socket.IO, Pusher, MongoDb and MySQL / Postgres. In fact I made this site using React.js and
+                Gatsby!
+              </p>
+              <p>
+                I can also help with deployment, having used continous integration workflows and having some experience with docker and
+                linux
+              </p>
+            </Col>
+          </Row>
+        </Container>
         <div
           css={css`
             ${genClass.redBG}

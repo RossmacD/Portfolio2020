@@ -28,13 +28,11 @@ const RCanvas: React.FC = React.memo(() => {
   // const [requestId, setRequestId] = useState<number>(0)
 
   useEffect(() => {
-    console.log('We are in the rerender')
     // Setup variables
     const setup = () => {
       const { ok, canvas: newCanvas, ctx: newCtx } = sharedSetup(canvasRef)
       // Type check variables
       if (ok) {
-        console.log('Updating stuff')
         // Set variables in state
         setCanvas(oldCanvas => newCanvas)
         setCtx(oldCtx => newCtx)
@@ -105,7 +103,7 @@ const RCanvas: React.FC = React.memo(() => {
   if (height !== 0) {
     return <StyledCanvas ref={canvasRef} height={Math.floor(height * 0.8)} width={width} />
   }
-  return <div />
+  return <span />
 })
 
 export default RCanvas

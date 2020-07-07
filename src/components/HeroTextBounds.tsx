@@ -7,10 +7,10 @@ const BoundingBox = styled.div`
   padding: 1em 2em;
 `
 const HeroTextBounds: React.FC = ({ children }) => {
-  const boundingRef = useRef<HTMLDivElement>(null)
+  // const boundingRef = useRef<HTMLDivElement>(null){/*ref={boundingRef*/}
   // const [dimensions] = getDimensions(boundingRef)
 
-  return <BoundingBox ref={boundingRef}>{children}</BoundingBox>
+  return <BoundingBox>{children}</BoundingBox>
 }
 
 export default HeroTextBounds
