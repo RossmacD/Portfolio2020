@@ -21,6 +21,8 @@ export default `
   }
 
   body {
+    -webkit-font-smoothing: subpixel-antialiased;
+    text-rendering:optimizeLegibility;
     width: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -129,7 +131,7 @@ export default `
   }
 
   dt {
-    font-weight: bold;
+    font-weight: 600;
   }
 
   dd {
