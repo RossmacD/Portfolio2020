@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState, useReducer } from 'react'
 import styled from '@emotion/styled'
 // import { render } from 'react-dom'
 import Perlin from 'perlin.js'
@@ -23,15 +23,18 @@ const RCanvas: React.FC = React.memo(() => {
   // We force the type as it is always typecheckd before use
   const [canvas, setCanvas] = useState<HTMLCanvasElement | undefined>(undefined)
   const [ctx, setCtx] = useState<CanvasRenderingContext2D | undefined>(undefined)
+  // const [ignored, forceUpdate] = useState<number>(0)
   // const [counter, setCounter] = useState<number>(0)
   // const [requestId, setRequestId] = useState<number>(0)
 
   useEffect(() => {
+    console.log('We are in the rerender')
     // Setup variables
     const setup = () => {
       const { ok, canvas: newCanvas, ctx: newCtx } = sharedSetup(canvasRef)
       // Type check variables
       if (ok) {
+        console.log('Updating stuff')
         // Set variables in state
         setCanvas(oldCanvas => newCanvas)
         setCtx(oldCtx => newCtx)
@@ -39,7 +42,7 @@ const RCanvas: React.FC = React.memo(() => {
     }
     // Call next frame - this continues the loop
     setup()
-  })
+  }, [height, width])
 
   useEffect(() => {
     if (canvas && ctx) {
@@ -99,7 +102,10 @@ const RCanvas: React.FC = React.memo(() => {
     }
   }, [canvas, ctx])
 
-  return <StyledCanvas ref={canvasRef} height={Math.floor(height * 0.8)} width={width} />
+  if (height !== 0) {
+    return <StyledCanvas ref={canvasRef} height={Math.floor(height * 0.8)} width={width} />
+  }
+  return <div />
 })
 
 export default RCanvas
