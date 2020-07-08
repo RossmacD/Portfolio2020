@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 // import { render } from 'react-dom'
 import Perlin from 'perlin.js'
 import useWindowDimensions from '../utils/WindowDimensions'
-import { sharedSetup, Particle } from '../animations/helpers'
+import { sharedSetup, Particle, getPixelRatio } from '../animations/helpers'
 
 const StyledCanvas = styled.canvas`
   position: absolute;
@@ -11,11 +11,11 @@ const StyledCanvas = styled.canvas`
   z-index: -1;
 `
 
-// interface RCanvasProps {
-//   // animation: (canvasRef: React.RefObject<HTMLCanvasElement>) => () => void
-// }
+interface RCanvasProps {
+  dimensions: any
+}
 
-const RCanvas: React.FC = React.memo(() => {
+const RCanvas: React.FC<RCanvasProps> = React.memo(({ dimensions }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   const { height, width } = typeof window !== 'undefined' && window ? useWindowDimensions() : { height: 0, width: 0 }
@@ -42,6 +42,7 @@ const RCanvas: React.FC = React.memo(() => {
   }, [height, width])
 
   useEffect(() => {
+    // console.log(dimensions)
     if (canvas && ctx) {
       // Continuous variables
       let requestId = 0
@@ -51,6 +52,7 @@ const RCanvas: React.FC = React.memo(() => {
         // ctx.clearRect(0, 0, canvas.width, canvas.height)
 
         const period = 0.02
+        const ratio = getPixelRatio(ctx)
         // eslint-disable-next-line no-restricted-syntax
         for (const p of particles) {
           const v = Perlin.perlin2(p.x * period, p.y * period)
@@ -59,7 +61,19 @@ const RCanvas: React.FC = React.memo(() => {
           const a = v * 2 * Math.PI + p.a
           p.x += 10 * Math.cos(a)
           p.y += 10 * Math.sin(a)
-          if (p.x < 0 || p.x > canvas.width || p.y < 0 || p.y > canvas.height) {
+          // if (dimensions) console.log(dimensions)
+          if (
+            p.x < 0 ||
+            p.x > canvas.width ||
+            p.y < 0 ||
+            p.y > canvas.height ||
+            (dimensions &&
+              dimensions.x &&
+              p.x > dimensions.x * ratio &&
+              p.x < (dimensions.x + dimensions.width) * ratio &&
+              p.y > dimensions.y * ratio &&
+              p.y < (dimensions.y + dimensions.height) * ratio)
+          ) {
             p.x = Math.random() * canvas.width
             p.y = Math.random() * canvas.height
           }
@@ -71,7 +85,7 @@ const RCanvas: React.FC = React.memo(() => {
 
       const prerender = () => {
         Perlin.seed(Math.random())
-        for (let index = 1; index <= 100; index += 1) {
+        for (let index = 1; index <= 50; index += 1) {
           const p1 = {
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
@@ -83,11 +97,6 @@ const RCanvas: React.FC = React.memo(() => {
             y: p1.y,
             a: Math.PI
           })
-          particles.push({
-            x: p1.x,
-            y: p1.y,
-            a: Math.PI * 2
-          })
         }
         render()
       }
@@ -97,10 +106,11 @@ const RCanvas: React.FC = React.memo(() => {
         cancelAnimationFrame(requestId)
       }
     }
-  }, [canvas, ctx])
+    return () => {}
+  }, [canvas, ctx, dimensions])
 
   if (height !== 0) {
-    return <StyledCanvas ref={canvasRef} height={Math.floor(height * 0.8)} width={width} />
+    return <StyledCanvas ref={canvasRef} height={width > 576 ? Math.floor(height * 0.8) : height} width={width} />
   }
   return <span />
 })

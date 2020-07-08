@@ -13,11 +13,18 @@ interface HeroTitleProps {
 }
 
 const HeroTitle: React.FC<HeroTitleProps> = ({ hide, trigger }) => {
+  const [dimensions, setDimensions] = React.useState({ x: 0, y: 0, height: 0, width: 0, top: 0 })
+
+  const getBoundDimensions = (newDimensions: any) => {
+    setDimensions(old => newDimensions)
+    // console.log(newDimensions)
+  }
+
   return (
     <FixedDiv>
       <Hero>
-        <RCanvas />
-        <HeroTextBounds>
+        <RCanvas dimensions={dimensions} />
+        <HeroTextBounds getBoundDimensions={getBoundDimensions}>
           <DesktopHide>
             <Display1 special hide={hide}>
               Ross

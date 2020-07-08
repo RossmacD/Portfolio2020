@@ -8,7 +8,7 @@ export const StyledHero = styled.div`
   align-items: center;
   justify-content: center;
   @media (max-width: ${getEmSize(breakpoints.sm)}em) {
-    height: 90vh;
+    height: 100vh;
   }
 `
 export const FixedDiv = styled.div`
