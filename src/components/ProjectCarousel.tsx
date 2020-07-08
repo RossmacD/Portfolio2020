@@ -7,12 +7,12 @@ const ProjectCarousel = () => {
     <div
       css={css`
         display: flex;
-        // min-width:min-content
-        overflow-x: scroll;
+        overflow-x: auto;
         overflow-y: hidden;
-        // width: 100vw;
+        // overflow: visible;
         height: 16rem;
         flex-shrink: 0;
+        flex-wrap: nowrap;
       `}
     >
       <ProjectShortCard />

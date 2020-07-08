@@ -53,14 +53,24 @@ const IndexPage = () => {
             </Col>
           </Row>
         </Container>
-        <div
-          css={css`
-            ${genClass.redBG}
-          `}
-        >
-          <Container cssClass={genClass.redBG}>
-            <Row cssClass={genClass.minContainer}>
-              <Col span={6}>
+        <div>
+          <div
+            css={css`
+              background-size: auto;
+              // background-repeat: no-repeat;
+              // will-change: transform;
+              width: 100%;
+              height: 30rem;
+              // z-index: -1;
+              // clip-path: polygon(0px 16%, 100% 4%, 100% 82%, 0px 94%);
+              clip-path: polygon(0px 84%, 100% 96%, 100% 12%, 0px 6%);
+              // transform: translate3d(0px, -50px, 0px);
+              background-color: ${colors.red};
+            `}
+          />
+          <Container cssClass={genClass.breakContainer}>
+            <Row>
+              <Col span={6} cssClass={genClass.flexCol}>
                 <h1>📝 Projects </h1>
                 <ProjectCarousel />
                 <AltHomeButton to="contact">All</AltHomeButton>

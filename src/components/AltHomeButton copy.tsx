@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
+import { colors } from '../styles/variables'
 
 const StyledButton = css`
   display: inline-block;
@@ -12,11 +13,16 @@ const StyledButton = css`
   padding: 10px 40px;
   font-size: 14px;
   font-weight: 700;
+  align-self: flex-end;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
   :hover {
-    color: #8400ff;
+    // color: #000;
+    background: #8400ff;
+    color: ${colors.red};
+    box-shadow: 0px 0px 0px 4px #8400ff;
   }
+  margin: 0.4rem;
 `
 
 interface HomeButtonProps {

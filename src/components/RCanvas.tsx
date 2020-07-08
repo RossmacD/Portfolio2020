@@ -6,9 +6,8 @@ import useWindowDimensions from '../utils/WindowDimensions'
 import { sharedSetup, Particle } from '../animations/helpers'
 
 const StyledCanvas = styled.canvas`
-  // width: '100px';
-  // height: '100px';
   position: absolute;
+  top: 0;
   z-index: -1;
 `
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
+import { colors } from '../styles/variables'
 
 const ProjectShortCard = () => {
   return (
