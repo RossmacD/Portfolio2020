@@ -27,7 +27,9 @@ export const genClass: CssClassList = {
   `,
   breakContainer: `
     position:relative;
-    top:-34rem;
-    margin-bottom:-34rem;
-  `
+    top:-26rem;
+    margin-bottom:-20rem;
+  `,
+  noMargin: `
+  margin:0;`
 }

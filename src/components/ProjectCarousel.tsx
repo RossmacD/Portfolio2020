@@ -3,6 +3,7 @@ import { css } from '@emotion/core'
 import SimpleBar from 'simplebar-react'
 import ProjectShortCard from './ProjectShortCard'
 import 'simplebar/dist/simplebar.min.css'
+import { padding } from 'polished'
 
 const ProjectCarousel = () => {
   return (
@@ -15,7 +16,8 @@ const ProjectCarousel = () => {
         width: '100%',
         overflowX: 'auto',
         gridTemplateRows: '1',
-        scrollSnapType: 'x proximity'
+        scrollSnapType: 'x proximity',
+        padding: '1rem 0'
       }}
     >
       {/* <div

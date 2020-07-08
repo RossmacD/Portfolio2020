@@ -69,7 +69,7 @@ const IndexPage = () => {
             `}
           />
           <Container cssClass={genClass.breakContainer}>
-            <Row>
+            <Row cssClass={genClass.noMargin}>
               <Col span={6} cssClass={genClass.flexCol}>
                 <h1>📝 Projects </h1>
                 <ProjectCarousel />
