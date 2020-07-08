@@ -9,8 +9,8 @@ const ProjectCarousel = () => {
     <div
       style={{
         display: 'grid',
-        gridGap: '0.5rem',
-        gridTemplateColumns: 'repeat(6, calc(50% - 40px))',
+        gridGap: '1.5rem',
+        gridTemplateColumns: 'repeat(6,24.4rem)',
         height: '16rem',
         width: '100%',
         overflowX: 'auto',
