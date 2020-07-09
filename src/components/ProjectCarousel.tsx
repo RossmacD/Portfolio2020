@@ -23,14 +23,19 @@ const ProjectCarousel = () => {
             <span
               {...restProps}
               ref={elementRef}
+              css={css`
+                ::after {
+                  content: ' ';
+                  width: 24.4rem;
+                }
+              `}
               style={{
                 height: '100%',
-                width: '100%',
+                marginRight: 500,
                 display: 'grid',
                 gridGap: '1.5rem',
                 gridTemplateColumns: 'repeat(6,24.4rem)',
-                scrollSnapType: 'x proximity',
-                gridTemplateRows: '1'
+                scrollSnapType: 'x proximity'
               }}
             />
           )

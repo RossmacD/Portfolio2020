@@ -7,7 +7,7 @@ interface ContainerProps {
   cssClass?: string
 }
 
-const Grid = styled.div`
+const Grid = styled.section`
   overflow: hidden;
   margin-left: auto;
   margin-right: auto;

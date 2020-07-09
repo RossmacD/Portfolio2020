@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Page from '../components/Page'
 import Container from '../components/Container'
 import IndexLayout from '../layouts'
+import Display2 from '../components/Display2'
 
 interface PageTemplateProps {
   data: {
@@ -22,6 +23,7 @@ interface PageTemplateProps {
       excerpt: string
       frontmatter: {
         title: string
+        description: string
       }
     }
   }
@@ -31,7 +33,8 @@ const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => (
   <IndexLayout>
     <Page>
       <Container>
-        <h1>{data.markdownRemark.frontmatter.title}</h1>
+        <Display2 hide={false}>{data.markdownRemark.frontmatter.title}</Display2>
+        <h1>{data.markdownRemark.frontmatter.description}</h1>
         {/* eslint-disable-next-line react/no-danger */}
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </Container>
@@ -58,6 +61,7 @@ export const query = graphql`
       excerpt
       frontmatter {
         title
+        description
       }
     }
   }
