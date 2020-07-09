@@ -1,15 +1,17 @@
 import React from 'react'
 import { css } from '@emotion/core'
+import { Link } from 'gatsby'
 import { colors } from '../styles/variables'
 
 interface ShortCardProps {
   title: string
   description: string
+  to: string
 }
 
-const ProjectShortCard: React.FC<ShortCardProps> = ({ title, description }) => {
+const ProjectShortCard: React.FC<ShortCardProps> = ({ title, description, to }) => {
   return (
-    <div
+    <Link
       css={css`
       scroll-snap-align: center;
       // position:relative;
@@ -26,6 +28,7 @@ const ProjectShortCard: React.FC<ShortCardProps> = ({ title, description }) => {
       // border:solid ${colors.red} 0.4rem;
       // flex: 0 0 auto!important;
       :hover {
+        text-decoration: none;
         animation: bigHover 0.3s ease-out  forwards!important;
         @keyframes bigHover {
           0% {
@@ -39,6 +42,7 @@ const ProjectShortCard: React.FC<ShortCardProps> = ({ title, description }) => {
           }
         }
       `}
+      to={to}
     >
       <h5
         css={css`
@@ -56,7 +60,7 @@ const ProjectShortCard: React.FC<ShortCardProps> = ({ title, description }) => {
         {/* An invoicing web app built with Laravel and php. Used stripe api for real payment and transfers */}
         {description || ''}
       </p>
-    </div>
+    </Link>
   )
 }
 

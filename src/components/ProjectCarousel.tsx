@@ -7,13 +7,16 @@ import { genClass } from '../styles/genericClasses'
 
 export const projectsQueryShort = graphql`
   query GetProjectsListShort {
-    allMarkdownRemark(limit: 6) {
+    allMarkdownRemark(limit: 5) {
       nodes {
         frontmatter {
           title
           description
         }
         id
+        fields {
+          slug
+        }
       }
     }
   }
@@ -27,6 +30,9 @@ interface CarouselProps {
         description: string
       }
       id: string
+      fields: {
+        slug: string
+      }
     }[]
   }
 }
@@ -61,7 +67,7 @@ const ProjectCarousel = () => {
                   `}
                   style={{
                     height: '100%',
-                    marginRight: 500,
+                    paddingLeft: '1.5rem',
                     display: 'grid',
                     gridGap: '1.5rem',
                     gridTemplateColumns: 'repeat(6,24.4rem)',
@@ -90,6 +96,7 @@ const ProjectCarousel = () => {
               key={markdownNode.id}
               title={markdownNode.frontmatter.title}
               description={markdownNode.frontmatter.description}
+              to={markdownNode.fields.slug}
             />
           ))}
         </Scrollbar>
