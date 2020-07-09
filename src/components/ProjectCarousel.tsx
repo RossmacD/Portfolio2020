@@ -12,7 +12,9 @@ const ProjectCarousel = () => {
         width: '100%',
         overflowX: 'auto',
         padding: '1rem 0',
-        margin: '1rem 0'
+        marginLeft: 'max(50% - 600px, 0px)',
+        marginTop: '1rem',
+        marginBottom: '1rem'
       }}
       contentProps={{
         renderer: props => {
@@ -37,7 +39,7 @@ const ProjectCarousel = () => {
       trackXProps={{
         renderer: props => {
           const { elementRef, ...restProps } = props
-          return <span {...restProps} ref={elementRef} css={css(genClass.fauxContainter)} />
+          return <span {...restProps} ref={elementRef} css={css(genClass.maxCont)} />
         }
       }}
     >

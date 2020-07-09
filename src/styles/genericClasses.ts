@@ -38,5 +38,9 @@ export const genClass: CssClassList = {
     margin-left:auto;
     margin-right:auto;
     right:0;
+  `,
+  maxCont: `
+  width:100%;
+    max-width:1200px;
   `
 }
