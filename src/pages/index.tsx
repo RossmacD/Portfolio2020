@@ -15,7 +15,6 @@ import { genClass } from '../styles/genericClasses'
 import { Row } from '../components/Row'
 import AltHomeButton from '../components/AltHomeButton copy'
 import { colors } from '../styles/variables'
-import ProjectShortCard from '../components/ProjectShortCard'
 import ProjectCarousel from '../components/ProjectCarousel'
 // import { animOne } from '../animations/helpers'
 
@@ -39,7 +38,7 @@ const IndexPage = () => {
                 and in a supporting capacity.
               </p>
               <p>
-                Here are some projects I have worked on
+                I have been working as a freelance developer and contractor for 4 years. Here are some projects I have worked on
                 <span role="img" aria-label="laptop">
                   💻
                 </span>
@@ -53,17 +52,20 @@ const IndexPage = () => {
             </Col>
           </Row>
         </Container>
-        <div>
+        <div
+          css={css`
+            margin-top: 4rem;
+          `}
+        >
           <div
             css={css`
               background-size: auto;
               // background-repeat: no-repeat;
               // will-change: transform;
               width: 100%;
-              height: 30rem;
-              // z-index: -1;
+              height: 32rem;
               // clip-path: polygon(0px 16%, 100% 4%, 100% 82%, 0px 94%);
-              clip-path: polygon(0px 84%, 100% 96%, 100% 12%, 0px 6%);
+              clip-path: polygon(0px 84%, 100% 96%, 100% 18%, 0px 6%);
               // transform: translate3d(0px, -50px, 0px);
               background-color: ${colors.red};
             `}

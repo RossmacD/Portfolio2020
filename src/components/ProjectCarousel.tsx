@@ -1,25 +1,51 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import SimpleBar from 'simplebar-react'
+import Scrollbar from 'react-scrollbars-custom'
 import ProjectShortCard from './ProjectShortCard'
-import 'simplebar/dist/simplebar.min.css'
-import { padding } from 'polished'
 
 const ProjectCarousel = () => {
   return (
-    <div
+    <Scrollbar
       style={{
-        display: 'grid',
-        gridGap: '1.5rem',
-        gridTemplateColumns: 'repeat(6,24.4rem)',
         height: '16rem',
         width: '100%',
         overflowX: 'auto',
-        gridTemplateRows: '1',
-        scrollSnapType: 'x proximity',
         padding: '1rem 0'
       }}
+      contentProps={{
+        renderer: props => {
+          const { elementRef, ...restProps } = props
+          return (
+            <span
+              {...restProps}
+              ref={elementRef}
+              style={{
+                height: '100%',
+                width: '100%',
+                display: 'grid',
+                gridGap: '1.5rem',
+                gridTemplateColumns: 'repeat(6,24.4rem)',
+                scrollSnapType: 'x proximity',
+                gridTemplateRows: '1'
+              }}
+            />
+          )
+        }
+      }}
     >
+      {/* // <div */}
+      {/* //   style={{
+    //     display: 'grid',
+    //     gridGap: '1.5rem',
+    //     gridTemplateColumns: 'repeat(6,24.4rem)',
+    //     height: '16rem',
+    //     width: '100%',
+    //     overflowX: 'auto',
+    //     gridTemplateRows: '1',
+    //     scrollSnapType: 'x proximity',
+    //     padding: '1rem 0'
+    //   }}
+    // > */}
       {/* <div
         css={css`
           display: flex;
@@ -30,6 +56,7 @@ const ProjectCarousel = () => {
           flex-wrap: nowrap;
         `}
       > */}
+
       <ProjectShortCard />
       <ProjectShortCard />
       <ProjectShortCard />
@@ -37,7 +64,8 @@ const ProjectCarousel = () => {
       <ProjectShortCard />
       <ProjectShortCard />
       {/* </div> */}
-    </div>
+      {/* </div> */}
+    </Scrollbar>
   )
 }
 

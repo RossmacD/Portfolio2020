@@ -55,8 +55,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-intersection-observer-hook": "^1.0.4",
-    "simplebar": "^4.2.3-corejs2",
-    "simplebar-react": "^1.2.3-corejs2",
+    "react-scrollbars-custom": "^4.0.25",
     "typescript": "^3.5.2"
   },
   "devDependencies": {
