@@ -2,6 +2,7 @@ import React from 'react'
 import { css } from '@emotion/core'
 import Scrollbar from 'react-scrollbars-custom'
 import ProjectShortCard from './ProjectShortCard'
+import { genClass } from '../styles/genericClasses'
 
 const ProjectCarousel = () => {
   return (
@@ -10,7 +11,8 @@ const ProjectCarousel = () => {
         height: '16rem',
         width: '100%',
         overflowX: 'auto',
-        padding: '1rem 0'
+        padding: '1rem 0',
+        margin: '1rem 0'
       }}
       contentProps={{
         renderer: props => {
@@ -30,6 +32,12 @@ const ProjectCarousel = () => {
               }}
             />
           )
+        }
+      }}
+      trackXProps={{
+        renderer: props => {
+          const { elementRef, ...restProps } = props
+          return <span {...restProps} ref={elementRef} css={css(genClass.fauxContainter)} />
         }
       }}
     >

@@ -31,5 +31,12 @@ export const genClass: CssClassList = {
     margin-bottom:-20rem;
   `,
   noMargin: `
-  margin:0;`
+    margin:0;`,
+  fauxContainter: `
+  width:100%;
+    max-width:1200px;
+    margin-left:auto;
+    margin-right:auto;
+    right:0;
+  `
 }

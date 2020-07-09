@@ -70,15 +70,20 @@ const IndexPage = () => {
               background-color: ${colors.red};
             `}
           />
-          <Container cssClass={genClass.breakContainer}>
+          <div css={css(genClass.breakContainer)}>
             <Row cssClass={genClass.noMargin}>
               <Col span={6} cssClass={genClass.flexCol}>
-                <h1>📝 Projects </h1>
+                <div css={css(genClass.fauxContainter + genClass.flexCol)}>
+                  <h1>📝 Projects </h1>
+                </div>
+
                 <ProjectCarousel />
-                <AltHomeButton to="contact">All</AltHomeButton>
+                <div css={css(genClass.fauxContainter + genClass.flexCol)}>
+                  <AltHomeButton to="contact">All</AltHomeButton>
+                </div>
               </Col>
             </Row>
-          </Container>
+          </div>
         </div>
         <Container>
           <Row>
