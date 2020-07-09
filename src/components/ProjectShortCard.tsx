@@ -2,7 +2,12 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { colors } from '../styles/variables'
 
-const ProjectShortCard = () => {
+interface ShortCardProps {
+  title: string
+  description: string
+}
+
+const ProjectShortCard: React.FC<ShortCardProps> = ({ title, description }) => {
   return (
     <div
       css={css`
@@ -41,14 +46,15 @@ const ProjectShortCard = () => {
           text-transform: capitalize;
         `}
       >
-        INVOICE AMIGO
+        {title || 'Untitled'}
       </h5>
       <p
         css={css`
           color: black;
         `}
       >
-        An invoicing web app built with Laravel and php. Used stripe api for real payment and transfers
+        {/* An invoicing web app built with Laravel and php. Used stripe api for real payment and transfers */}
+        {description || ''}
       </p>
     </div>
   )

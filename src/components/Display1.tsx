@@ -12,7 +12,7 @@ const StyledDisplay1 = styled.h1`
   color: ${colors.white};
   line-height: 1.1ch;
   opacity: 0;
-  animation: fadein2 0.5s ease-out 0.2s forwards !important;
+  animation: fadein2 0.5s ease-out 0s forwards !important;
   @keyframes fadein2 {
     0% {
       opacity: 0;

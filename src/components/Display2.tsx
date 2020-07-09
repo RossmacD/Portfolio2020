@@ -40,7 +40,7 @@ const StyledDisplay2 = styled.h2`
     `
       : `
       opacity:0%;
-      animation: fadein3 0.5s ease-out 0.5s forwards!important;
+      animation: fadein3 0.5s ease-out 0.3s forwards!important;
           @keyframes fadein3 {
             0% {
               opacity: 0;
