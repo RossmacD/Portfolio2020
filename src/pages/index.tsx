@@ -21,6 +21,15 @@ import ProjectCarousel from '../components/ProjectCarousel'
 
 const IndexPage = () => {
   const [hideHero, setHideHero] = React.useState(false)
+  const [user, setUser] = React.useState(null)
+  // React.useEffect(() => {
+  //   // get data from GitHub api
+  //   fetch(`https://api.github.com/users/RossmacD`)
+  //     .then(response => response.json()) // parse JSON from request
+  //     .then(resultData => {
+  //       setStarsCount(resultData.stargazers_count)
+  //     }) // set data for the number of stars
+  // }, [])
   return (
     <IndexLayout>
       <DocflowFix>

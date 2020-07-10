@@ -6,7 +6,7 @@ export default `
     box-sizing: border-box;
     scroll-behavior: smooth;
     width:100vw;
-    overflow-x:hidden;
+    // overflow-x:hidden;
   }
 
   *,
@@ -25,7 +25,8 @@ export default `
     text-rendering:optimizeLegibility;
     width: 100%;
     overflow-x: hidden;
-    overflow-y: scroll;
+    // overflow-y: scroll;
+    height:100%;
     font-family: ${fonts.sansSerif};
     color: ${colors.white};
     background-color: ${colors.black};
