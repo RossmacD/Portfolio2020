@@ -8,28 +8,17 @@ import { Row } from '../components/Row'
 import Col from '../components/Col'
 import Container from '../components/Container'
 import { colors } from '../styles/variables'
+import StickyNav from '../components/StickyNav'
 
 const MessageStyle = css`
   width: 100%;
   resize: none;
 `
-const Navbar = styled.div`
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0px;
-  z-index: 99999;
-  background: ${colors.brand};
-  padding: 0.5rem 1rem;
-`
 
 const Contact = () => (
   <IndexLayout>
     <Page>
-      <Navbar>
-        <h1>Ross MacD</h1>
-        {/* <Link to="/">Projects</Link>
-          <Link to="/">Contact</Link> */}
-      </Navbar>
+      <StickyNav />
       <Container>
         <Row>
           <Col span={6}>

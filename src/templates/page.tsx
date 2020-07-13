@@ -5,6 +5,7 @@ import Page from '../components/Page'
 import Container from '../components/Container'
 import IndexLayout from '../layouts'
 import Display2 from '../components/Display2'
+import StickyNav from '../components/StickyNav'
 
 interface PageTemplateProps {
   data: {
@@ -32,6 +33,7 @@ interface PageTemplateProps {
 const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => (
   <IndexLayout>
     <Page>
+      <StickyNav />
       <Container>
         <Display2 hide={false}>{data.markdownRemark.frontmatter.title}</Display2>
         <h1>{data.markdownRemark.frontmatter.description}</h1>

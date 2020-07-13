@@ -22,7 +22,7 @@ export const projectsQueryShort = graphql`
   }
 `
 
-interface CarouselProps {
+export interface ProjectsShortReturn {
   allMarkdownRemark: {
     nodes: {
       frontmatter: {
@@ -41,7 +41,7 @@ const ProjectCarousel = () => {
   return (
     <StaticQuery
       query={projectsQueryShort}
-      render={(data: CarouselProps) => (
+      render={(data: ProjectsShortReturn) => (
         <Scrollbar
           style={{
             height: '16rem',
@@ -84,13 +84,6 @@ const ProjectCarousel = () => {
             }
           }}
         >
-          {/* <ProjectShortCard />
-          <ProjectShortCard />
-          <ProjectShortCard />
-          <ProjectShortCard />
-          <ProjectShortCard />
-          <ProjectShortCard /> */}
-          {console.log('data', data)}
           {data.allMarkdownRemark.nodes.map((markdownNode, i) => (
             <ProjectShortCard
               key={markdownNode.id}

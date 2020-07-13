@@ -17,6 +17,7 @@ import { Row } from '../components/Row'
 import AltHomeButton from '../components/AltHomeButton copy'
 import { colors } from '../styles/variables'
 import ProjectCarousel from '../components/ProjectCarousel'
+import StickyNav from '../components/StickyNav'
 // import { animOne } from '../animations/helpers'
 
 const IndexPage = () => {
@@ -36,6 +37,7 @@ const IndexPage = () => {
         <HeroTitle hide={hideHero} trigger={setHideHero} />
       </DocflowFix>
       <Page>
+        <StickyNav />
         <Container>
           <Row>
             <Col span={3}>
