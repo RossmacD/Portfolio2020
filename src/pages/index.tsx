@@ -14,10 +14,12 @@ import VisibilityTrigger from '../components/VisibilityTrigger'
 import { genClass } from '../styles/genericClasses'
 import { Row } from '../components/Row'
 import AltHomeButton from '../components/AltHomeButton copy'
-import { colors } from '../styles/variables'
+import { breakpoints, colors } from '../styles/variables'
 import ProjectCarousel from '../components/ProjectCarousel'
 import headGIF from '../assets/hack.gif'
 import Footer from '../components/Footer'
+import { getEmSize } from '../styles/mixins'
+import { Terminal } from '../components/Terminal'
 // import '@lottiefiles/lottie-player'
 
 // import { animOne } from '../animations/helpers'
@@ -49,15 +51,16 @@ const IndexPage = () => {
                 transform: scale(2) translateX(-14%);
                 bottom: 0;
                 right: 0;
-                height: 100%;
                 z-index: 1;
                 opacity: 0.45;
                 //Media Query here
-                /* transform: scale(2) translateX(-2%);
-                bottom: 0;
-                right: 0;
-                width: 100%;
-                height: 50%; */
+                @media screen and (max-width: ${getEmSize(breakpoints.md)}em) {
+                  transform: scale(2) translateX(-2%);
+                  width: 100%;
+                  height: 50%;
+                }
+                height: 100%;
+                width: auto;
               `}
             >
               <path
@@ -70,6 +73,7 @@ const IndexPage = () => {
               span={3}
               cssClass={css`
                 z-index: 2;
+                padding: 1rem 0.5rem;
               `}
             >
               <h1>
@@ -147,7 +151,9 @@ const IndexPage = () => {
         </div>
         <Container>
           <Row>
-            <Col span={3} cssClass={genClass.flexCenter} />
+            <Col span={3}>
+              <Terminal />
+            </Col>
             <Col span={3}>
               <h1>You do the Full-stack?</h1>
               <p>Yep, I have experience with front-end, backend and the networking side of things</p>
