@@ -9,6 +9,7 @@ import Col from '../components/Col'
 import Container from '../components/Container'
 import { colors } from '../styles/variables'
 import StickyNav from '../components/StickyNav'
+import Footer from '../components/Footer'
 
 const MessageStyle = css`
   width: 100%;
@@ -21,7 +22,7 @@ const Contact = () => (
       <StickyNav />
       <Container>
         <Row>
-          <Col span={6}>
+          <Col span={3}>
             <h1>Contact</h1>
             <p>Name</p>
             <input type="text" />
@@ -31,8 +32,12 @@ const Contact = () => (
             <textarea rows={8} css={MessageStyle} />
             <input type="submit" />
           </Col>
+          <Col span={3}>
+            <p>Hire me</p>
+          </Col>
         </Row>
       </Container>
+      <Footer />
     </Page>
   </IndexLayout>
 )

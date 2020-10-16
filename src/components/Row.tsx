@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 
 export const Row = styled.div`
+  position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   grid-gap: 0.5rem;

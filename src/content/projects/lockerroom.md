@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 'Heres a title'
-description: 'Here is a description these are usually fairly long so ill pad it out a little'
+title: 'TheLockerRoom.ie'
+description: 'A cloud based digital media subscription service'
 ---
 
 # H1

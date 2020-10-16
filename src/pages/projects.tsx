@@ -10,6 +10,7 @@ import { Row } from '../components/Row'
 import Col from '../components/Col'
 import { projectsQueryShort, ProjectsShortReturn } from '../components/ProjectCarousel'
 import ProjectShortCard from '../components/ProjectShortCard'
+import Footer from '../components/Footer'
 
 const ProjectsPage = () => (
   <StaticQuery
@@ -22,6 +23,8 @@ const ProjectsPage = () => (
             <Row
               cssClass={`
                  margin-bottom:0;
+                  margin-top: 2rem;
+                  margin-top:4rem;
                 `}
             >
               <Col span={6}>
@@ -51,6 +54,7 @@ const ProjectsPage = () => (
               </Col>
             </Row>
           </Container>
+          <Footer />
         </Page>
       </IndexLayout>
     )}

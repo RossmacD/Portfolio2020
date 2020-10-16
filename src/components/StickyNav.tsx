@@ -50,7 +50,7 @@ const StickyNav = () => (
     <Link to="/projects" css={NavLink}>
       Projects
     </Link>
-    <Link to="/" css={[NavLink, lastNavLink]}>
+    <Link to="/contact" css={[NavLink, lastNavLink]}>
       Contact
     </Link>
   </Navbar>

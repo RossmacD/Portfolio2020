@@ -1,4 +1,4 @@
-import { colors } from './variables'
+import { colors, dimensions } from './variables'
 
 export interface CssClassList {
   [id: string]: string
@@ -33,11 +33,12 @@ export const genClass: CssClassList = {
   noMargin: `
     margin:0;`,
   fauxContainter: `
-  width:100%;
+    width:100%;
     max-width:1200px;
     margin-left:auto;
     margin-right:auto;
     right:0;
+    padding: 0 ${dimensions.containerPadding}rem;
   `,
   maxCont: `
   width:100%;

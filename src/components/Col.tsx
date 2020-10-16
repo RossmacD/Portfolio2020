@@ -1,8 +1,10 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
+import { SerializedStyles } from '@emotion/core'
+// import { css } from '@emotion/core'
 
 interface ColProps {
-  cssClass?: string
+  cssClass?: string | SerializedStyles
   span: number
 }
 const StyledCol = styled.div<ColProps>`

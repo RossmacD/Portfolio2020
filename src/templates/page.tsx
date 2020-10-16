@@ -6,6 +6,7 @@ import Container from '../components/Container'
 import IndexLayout from '../layouts'
 import Display2 from '../components/Display2'
 import StickyNav from '../components/StickyNav'
+import Footer from '../components/Footer'
 
 interface PageTemplateProps {
   data: {
@@ -40,6 +41,7 @@ const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => (
         {/* eslint-disable-next-line react/no-danger */}
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </Container>
+      <Footer />
     </Page>
   </IndexLayout>
 )

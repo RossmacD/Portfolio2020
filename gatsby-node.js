@@ -8,9 +8,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   // through `createNodeField` so that the fields still exist and GraphQL won't
   // trip up. An empty string is still required in replacement to `null`.
 
+  // eslint-disable-next-line default-case
   switch (node.internal.type) {
     case 'MarkdownRemark': {
-      const { permalink, layout } = node.frontmatter
+      const { permalink, layout, description } = node.frontmatter
       const { relativePath } = getNode(node.parent)
 
       let slug = permalink

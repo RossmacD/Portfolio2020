@@ -167,4 +167,22 @@ export default `
   .hideAnimD1{
     opacity:0%
   }
+
+  input, textarea{
+    background:${colors.black};
+    border:0.15rem solid ${colors.white};
+    color:${colors.white};
+    padding:0.4rem 0.5rem;
+    margin-bottom:1rem;
+    width:100%;
+    // border-radius:15px;
+  }
+
+  input:focus, textarea:focus{
+    outline: none;
+    transition:border 0.5s, background 0.5s;
+    background:${colors.red}32;
+    border:0.15rem solid ${colors.red};
+  }
+
 `

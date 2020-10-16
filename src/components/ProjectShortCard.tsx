@@ -14,8 +14,6 @@ const ProjectShortCard: React.FC<ShortCardProps> = ({ title, description, to }) 
     <Link
       css={css`
       scroll-snap-align: center;
-      // position:relative;
-      // top:-100px;
       grid-column: span 1;
       display: inline-block;
       background: white;
@@ -23,10 +21,7 @@ const ProjectShortCard: React.FC<ShortCardProps> = ({ title, description, to }) 
       height: 12rem;
       padding: 1.5rem;
       width: 24.4rem;
-      // margin:1rem 1.5rem;
       cursor:pointer;
-      // border:solid ${colors.red} 0.4rem;
-      // flex: 0 0 auto!important;
       :hover {
         text-decoration: none;
         animation: bigHover 0.3s ease-out  forwards!important;
@@ -36,9 +31,9 @@ const ProjectShortCard: React.FC<ShortCardProps> = ({ title, description, to }) 
             // border:solid ${colors.red} 0.4rem;
           }
           100% {
-            transform: translate(0.4rem, 0.4rem);
+            transform: translate(0.2rem, 0.2rem);
             // border:solid black 0.4rem;
-            box-shadow: 0px 0px 0px 5px rgba(0,0,0,1);
+            // box-shadow: 0px 0px 0px 5px rgba(0,0,0,1);
           }
         }
       `}
