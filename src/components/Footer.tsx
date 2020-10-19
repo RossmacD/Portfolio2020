@@ -27,7 +27,7 @@ const Footer = () => (
   <StyledFooter>
     <p>Rossmacd © 2020</p>
     <span>
-      <Link to="/contact">Contact Me!</Link> | <Link to="/projects">Projects</Link>
+      <Link to="/contact">Contact Me</Link> | <Link to="/projects">Projects</Link>
     </span>
   </StyledFooter>
 )
