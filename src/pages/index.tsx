@@ -1,6 +1,6 @@
 import * as React from 'react'
 // import { Link } from 'gatsby'
-import { css } from '@emotion/core'
+import { css, keyframes } from '@emotion/core'
 import Page from '../components/Page'
 import Container from '../components/Container'
 import IndexLayout from '../layouts'
@@ -26,6 +26,67 @@ import { Terminal } from '../components/Terminal'
 
 const IndexPage = () => {
   const [hideHero, setHideHero] = React.useState(false)
+
+  const float = keyframes`
+  0% {
+    transform: scale(2) translateX(-14%) translateY(0rem);
+                //Media Query here
+    @media screen and (max-width: ${getEmSize(breakpoints.md)}em) {
+      transform: scale(2) translateX(-2%) translateY(0rem);
+      width: 100%;
+      height: 50%;
+    }
+	}
+	50% {
+		transform: scale(2) translateX(-14%) translateY(0.25rem);
+                //Media Query here
+    @media screen and (max-width: ${getEmSize(breakpoints.md)}em) {
+      transform: scale(2) translateX(-2%) translateY(0rem);
+      width: 100%;
+      height: 50%;
+    }
+	}
+	100% {
+    transform: scale(2) translateX(-14%) translateY(0rem);
+                //Media Query here
+    @media screen and (max-width: ${getEmSize(breakpoints.md)}em) {
+      transform: scale(2) translateX(-2%) translateY(0rem);
+      width: 100%;
+      height: 50%;
+    }
+	}
+`
+
+  const float2 = keyframes`
+0% {
+  transform: scale(2) translateX(14%) translateY(0rem);
+              //Media Query here
+  @media screen and (max-width: ${getEmSize(breakpoints.md)}em) {
+    transform: scale(2) translateX(2%) translateY(0rem);
+    width: 100%;
+    height: 50%;
+  }
+}
+50% {
+  transform: scale(2) translateX(14%) translateY(0.25rem);
+              //Media Query here
+  @media screen and (max-width: ${getEmSize(breakpoints.md)}em) {
+    transform: scale(2) translateX(2%) translateY(0rem);
+    width: 100%;
+    height: 50%;
+  }
+}
+100% {
+  transform: scale(2) translateX(14%) translateY(0rem);
+              //Media Query here
+  @media screen and (max-width: ${getEmSize(breakpoints.md)}em) {
+    transform: scale(2) translateX(2%) translateY(0rem);
+    width: 100%;
+    height: 50%;
+  }
+}
+`
+
   // const [user, setUser] = React.useState(null)
   // React.useEffect(() => {
   //   // get data from GitHub api
@@ -61,6 +122,8 @@ const IndexPage = () => {
                 }
                 height: 100%;
                 width: auto;
+
+                animation: ${float} 6s ease infinite;
               `}
             >
               <path
@@ -151,10 +214,51 @@ const IndexPage = () => {
         </div>
         <Container>
           <Row>
-            <Col span={3}>
+            <svg
+              viewBox="0 0 200 200"
+              xmlns="http://www.w3.org/2000/svg"
+              css={css`
+                position: absolute;
+                transform: scale(2) translateX(14%);
+                top: 0;
+                left: 0;
+                z-index: 1;
+                opacity: 0.45;
+                //Media Query here
+                @media screen and (max-width: ${getEmSize(breakpoints.md)}em) {
+                  transform: scale(2) translateX(-2%);
+                  width: 100%;
+                  height: 50%;
+                }
+                height: 100%;
+                width: auto;
+                animation: ${float2} 6s ease infinite;
+              `}
+            >
+              <path
+                fill="#ff005a"
+                d="M47.6,-61.3C62.8,-54.5,77,-42,83.9,-26C90.9,-10,90.5,9.6,81.3,22.9C72.1,36.1,54.1,42.9,39.1,51.3C24.1,59.7,12,69.7,-2.1,72.5C-16.1,75.4,-32.3,71,-43.9,61.5C-55.5,52,-62.6,37.3,-67.4,22C-72.2,6.7,-74.7,-9.2,-72.6,-26C-70.4,-42.7,-63.5,-60.3,-50.6,-67.9C-37.8,-75.5,-18.9,-73,-1.3,-71.2C16.2,-69.3,32.4,-68.1,47.6,-61.3Z"
+                transform="translate(100 100)"
+              />
+            </svg>
+
+            <Col
+              span={3}
+              cssClass={css`
+                position: relative;
+                overflow: hidden;
+                margin-bottom: 4rem;
+              `}
+            >
               <Terminal />
             </Col>
-            <Col span={3}>
+            <Col
+              span={3}
+              cssClass={css`
+                z-index: 2;
+                margin-bottom: 4rem;
+              `}
+            >
               <h1>You do the Full-stack?</h1>
               <p>Yep, I have experience with front-end, backend and the networking side of things</p>
               <p>

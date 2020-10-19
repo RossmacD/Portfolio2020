@@ -16,6 +16,9 @@ export const Terminal: React.FC<Props> = () => {
     border: 1px solid ${colors.white};
     display: flex;
     flex-direction: column;
+    position: relative;
+    background: black;
+    z-index: 2;
   `
 
   const commandHist = [
@@ -29,7 +32,6 @@ export const Terminal: React.FC<Props> = () => {
   const [typedText, setTypedText] = useState('')
 
   useEffect(() => {
-    // && typedText.length < commandHist[currentIndex[0]].text.length
     if (currentIndex[0] < commandHist.length) {
       setTimeout(
         () => {
@@ -49,7 +51,7 @@ export const Terminal: React.FC<Props> = () => {
     }
   }, [typedText])
 
-  const skills = ['Typescript', 'React', 'Java', 'Rust', 'PHP', 'HTML5', 'CSS', 'Node', 'Javascript', 'Android']
+  const skills = ['Typescript', 'React', 'Java', 'Rust', 'PHP', 'HTML5', 'CSS', 'Node', 'Javascript', 'Android', 'And_More']
 
   return (
     <div css={terminalStyle}>
