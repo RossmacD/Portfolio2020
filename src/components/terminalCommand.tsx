@@ -13,7 +13,7 @@ export const TerminalCommand: React.FC<Props> = ({ command, commandCss, active, 
     <code css={commandCss}>
       <span
         css={css`
-          color: #39ff14;
+          color: #5cf64a;
           margin-left: 0.25rem;
         `}
       >
@@ -22,7 +22,7 @@ export const TerminalCommand: React.FC<Props> = ({ command, commandCss, active, 
       :
       <span
         css={css`
-          color: #00f9ff;
+          color: #119da4;
         `}
       >
         {location}

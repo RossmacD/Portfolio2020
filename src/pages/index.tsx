@@ -17,6 +17,7 @@ import AltHomeButton from '../components/AltHomeButton copy'
 import { breakpoints, colors } from '../styles/variables'
 import ProjectCarousel from '../components/ProjectCarousel'
 import headGIF from '../assets/hack.gif'
+import { ProjectSvg } from '../assets/Project'
 import Footer from '../components/Footer'
 import { getEmSize } from '../styles/mixins'
 import { Terminal } from '../components/Terminal'
@@ -202,7 +203,15 @@ const IndexPage = () => {
             <Row cssClass={genClass.noMargin}>
               <Col span={6} cssClass={genClass.flexCol}>
                 <div css={css(genClass.fauxContainter + genClass.flexCol)}>
-                  <h1>📝 Projects </h1>
+                  <h1
+                    css={css`
+                      display: flex;
+                      /* justify-content: center; */
+                      align-items: center;
+                    `}
+                  >
+                    <ProjectSvg /> Projects{' '}
+                  </h1>
                 </div>
 
                 <ProjectCarousel />

@@ -13,7 +13,7 @@ export const Terminal: React.FC<Props> = () => {
     height: calc(100% - 2rem);
     background-color: ${colors.gray.calm};
     margin: 1rem 1.5rem;
-    border: 1px solid ${colors.white};
+    border: 2px solid ${colors.white};
     display: flex;
     flex-direction: column;
     position: relative;
