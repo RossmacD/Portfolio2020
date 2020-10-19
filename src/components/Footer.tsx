@@ -7,7 +7,9 @@ import { colors, dimensions } from '../styles/variables'
 const StyledFooter = styled.footer`
   display: flex;
   flex-direction: column;
-  background: ${colors.brand}32;
+  /* background: ${colors.brand}32; */
+  background: ${colors.black};
+  /* color: ${colors.gray.copy}; */
   // background: transparent;
   padding: 0.5rem 1rem;
   align-items: center;

@@ -11,7 +11,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   // eslint-disable-next-line default-case
   switch (node.internal.type) {
     case 'MarkdownRemark': {
-      const { permalink, layout, description } = node.frontmatter
+      const { permalink, layout, description, number, category } = node.frontmatter
       const { relativePath } = getNode(node.parent)
 
       let slug = permalink
@@ -38,6 +38,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         node,
         name: 'description',
         value: description || ''
+      })
+
+      createNodeField({
+        node,
+        name: 'number',
+        value: number || 0
+      })
+
+      createNodeField({
+        node,
+        name: 'category',
+        value: category || ''
       })
     }
   }

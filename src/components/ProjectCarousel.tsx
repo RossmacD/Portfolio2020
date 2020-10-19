@@ -10,8 +10,11 @@ export const projectsQueryShort = graphql`
     allMarkdownRemark(limit: 5) {
       nodes {
         frontmatter {
-          title
+          category
           description
+          layout
+          number
+          title
         }
         id
         fields {
@@ -28,6 +31,9 @@ export interface ProjectsShortReturn {
       frontmatter: {
         title: string
         description: string
+        category: string
+        layout: string
+        number: number
       }
       id: string
       fields: {
@@ -84,14 +90,17 @@ const ProjectCarousel = () => {
             }
           }}
         >
-          {data.allMarkdownRemark.nodes.map((markdownNode, i) => (
-            <ProjectShortCard
-              key={markdownNode.id}
-              title={markdownNode.frontmatter.title}
-              description={markdownNode.frontmatter.description}
-              to={markdownNode.fields.slug}
-            />
-          ))}
+          {data.allMarkdownRemark.nodes
+            .sort((b, a) => (a.frontmatter.number > b.frontmatter.number ? 1 : b.frontmatter.number > a.frontmatter.number ? -1 : 0))
+            .map((markdownNode, i) => (
+              <ProjectShortCard
+                key={markdownNode.id}
+                title={markdownNode.frontmatter.title}
+                description={markdownNode.frontmatter.description}
+                category={markdownNode.frontmatter.category}
+                to={markdownNode.fields.slug}
+              />
+            ))}
         </Scrollbar>
       )}
     />

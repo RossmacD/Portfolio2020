@@ -2,6 +2,8 @@
 layout: page
 title: 'TheLockerRoom.ie'
 description: 'A cloud based digital media subscription service'
+number: 3
+category: 'MERN STACK WEB'
 ---
 
 # H1

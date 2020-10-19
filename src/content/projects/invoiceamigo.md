@@ -2,6 +2,8 @@
 layout: page
 title: 'Invoice Amigo'
 description: 'A full featured invoicing web app, using the stripe API'
+number: 2
+category: 'WEB & ANDROID'
 ---
 
 Invoice Amigo was a project developed with laravel, vue, pusher and java (Android)

@@ -17,7 +17,7 @@ export const TerminalCommand: React.FC<Props> = ({ command, commandCss, active, 
           margin-left: 0.25rem;
         `}
       >
-        user@rossmacd.com
+        user@rossmacd
       </span>
       :
       <span

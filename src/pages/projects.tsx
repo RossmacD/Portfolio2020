@@ -23,19 +23,19 @@ const ProjectsPage = () => (
             <Row
               cssClass={`
                  margin-bottom:0;
-                  margin-top: 2rem;
                   margin-top:4rem;
                 `}
             >
               <Col span={6}>
                 <h1>Projects</h1>
+                <p>Here are some of the projects that I have worked on, most of which are commercial, see more on Github</p>
               </Col>
             </Row>
             <Row>
               <Col
                 span={6}
                 cssClass={`
-                  margin-top: 2rem;
+                  // margin-top: 1rem;
                   display: grid;
                   grid-auto-rows: 1fr;
                   grid-template-columns: repeat(auto-fit, minmax(24.4rem, 1fr));
@@ -43,14 +43,17 @@ const ProjectsPage = () => (
                   grid-row-gap: 1rem;
                 `}
               >
-                {data.allMarkdownRemark.nodes.map((markdownNode, i) => (
-                  <ProjectShortCard
-                    key={markdownNode.id}
-                    title={markdownNode.frontmatter.title}
-                    description={markdownNode.frontmatter.description}
-                    to={markdownNode.fields.slug}
-                  />
-                ))}
+                {data.allMarkdownRemark.nodes
+                  .sort((b, a) => (a.frontmatter.number > b.frontmatter.number ? 1 : b.frontmatter.number > a.frontmatter.number ? -1 : 0))
+                  .map((markdownNode, i) => (
+                    <ProjectShortCard
+                      key={markdownNode.id}
+                      title={markdownNode.frontmatter.title}
+                      description={markdownNode.frontmatter.description}
+                      to={markdownNode.fields.slug}
+                      category={markdownNode.frontmatter.category}
+                    />
+                  ))}
               </Col>
             </Row>
           </Container>

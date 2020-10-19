@@ -148,10 +148,10 @@ const IndexPage = () => {
                 and in a supporting capacity.
               </p>
               <p>
-                I have been working as a freelance developer and contractor for 4 years. Here are some projects I have worked on
-                <span role="img" aria-label="laptop">
+                I have been working as a freelance developer and contractor for over 4 years. Here are some projects I have worked on
+                {/* <span role="img" aria-label="laptop">
                   💻
-                </span>
+                </span> */}
               </p>
               <HomeButton to="https://github.com/RossmacD" newWindow>
                 See More
@@ -172,6 +172,7 @@ const IndexPage = () => {
                 css={css`
                   clip-path: circle(50% at 50% 50%);
                   z-index: 2;
+                  background-color: ${colors.black};
                   /* opacity: 0; */
                   /* animation: fadein2 0.8s ease-out 1s forwards; */
                 `}
@@ -276,16 +277,26 @@ const IndexPage = () => {
         <div
           css={css`
             ${genClass.redBG}
+            margin-top:8rem;
           `}
         >
           <Container cssClass={genClass.redBG}>
             <Row cssClass={genClass.minContainer}>
-              <Col span={6}>
-                <h1>
-                  <ShadowSpan>Contact Me</ShadowSpan>
-                </h1>
-                <p>Let's start working!</p>
-                <AltHomeButton to="contact">Contact Now</AltHomeButton>
+              <Col
+                span={6}
+                cssClass={css`
+                  display: flex;
+                  justify-content: center;
+                  text-align: center;
+                `}
+              >
+                <div>
+                  <h1>
+                    <ShadowSpan>Contact Me</ShadowSpan>
+                  </h1>
+                  <p>I'd love to hear from you. Let's start working together!</p>
+                  <AltHomeButton to="contact">Contact Now</AltHomeButton>
+                </div>
               </Col>
             </Row>
           </Container>

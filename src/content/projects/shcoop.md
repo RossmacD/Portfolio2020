@@ -2,6 +2,8 @@
 layout: page
 title: 'Shcoop'
 description: 'A casual cross platform party game built in react native'
+number: 3
+category: 'REACT NATIVE MOBILE & WEB'
 ---
 
 Shcoop was a project developed with React Native, socketIO, node and mongoDB.

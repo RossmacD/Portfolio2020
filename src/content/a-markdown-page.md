@@ -2,6 +2,8 @@
 layout: page
 title: 'Example Markdown page'
 description: 'An example markdown page'
+number: 0
+category: ''
 ---
 
 This is a lovely bit of markdown here. I have to say its quite nice.

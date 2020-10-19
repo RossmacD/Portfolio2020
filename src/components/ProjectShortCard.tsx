@@ -7,9 +7,10 @@ interface ShortCardProps {
   title: string
   description: string
   to: string
+  category: string
 }
 
-const ProjectShortCard: React.FC<ShortCardProps> = ({ title, description, to }) => {
+const ProjectShortCard: React.FC<ShortCardProps> = ({ title, description, to, category }) => {
   return (
     <Link
       css={css`
@@ -45,6 +46,16 @@ const ProjectShortCard: React.FC<ShortCardProps> = ({ title, description, to }) 
           text-transform: capitalize;
         `}
       >
+        <p
+          css={css`
+            font-size: 0.8rem;
+            margin: 0;
+            padding: 0;
+            color: ${colors.brand};
+          `}
+        >
+          {category}
+        </p>
         {title || 'Untitled'}
       </h5>
       <p
