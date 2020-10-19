@@ -207,7 +207,7 @@ const IndexPage = () => {
 
                 <ProjectCarousel />
                 <div css={css(genClass.fauxContainter + genClass.flexCol)}>
-                  <AltHomeButton to="contact">All</AltHomeButton>
+                  <AltHomeButton to="/projects">All</AltHomeButton>
                 </div>
               </Col>
             </Row>

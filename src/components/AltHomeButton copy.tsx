@@ -6,7 +6,8 @@ import { colors } from '../styles/variables'
 const StyledButton = css`
   display: inline-block;
   text-transform: uppercase;
-  color: #8400ff;
+  /* color: #8400ff; */
+  color: ${colors.black};
   text-decoration: none;
   border: 2px solid;
   background: transparent;
@@ -18,9 +19,10 @@ const StyledButton = css`
   transition: 0.2s all;
   :hover {
     // color: #000;
-    background: #8400ff;
+    background: ${colors.brand};
+    /* color: ${colors.red}; */
     color: ${colors.red};
-    box-shadow: 0px 0px 0px 4px #8400ff;
+    box-shadow: 0px 0px 0px 4px ${colors.brand};
   }
   margin: 0.4rem;
 `
