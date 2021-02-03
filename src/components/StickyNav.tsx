@@ -3,6 +3,8 @@ import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 import { colors, dimensions } from '../styles/variables'
+import linkdinSVG from '../assets/linkdinsvg.svg'
+import githubSVG from '../assets/github.svg'
 
 const Navbar = styled.nav`
   position: sticky;
@@ -22,7 +24,20 @@ const NavLink = css`
   padding: 0.5rem 1rem;
   margin: 0.5rem;
   border: 0.1rem solid ${colors.red};
+  :hover {
+    animation: bigHover 0.3s ease-out forwards !important;
+  }
 `
+const NavLinkSocial = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem;
+  :hover {
+    animation: bigHover 0.3s ease-out forwards !important;
+  }
+`
+
 const lastNavLink = css`
   margin-right: 5rem;
 `
@@ -50,9 +65,15 @@ const StickyNav = () => (
     <Link to="/projects" css={NavLink}>
       Projects
     </Link>
-    <Link to="/contact" css={[NavLink, lastNavLink]}>
+    <Link to="/contact" css={[NavLink]}>
       Contact
     </Link>
+    <a href="https://github.com/RossmacD" target="_blank" rel="noopener noreferrer" css={[NavLinkSocial]}>
+      <img src={githubSVG} width="30" height="30" alt="Github" title="Github" />
+    </a>
+    <a href="https://www.linkedin.com/in/ross-macd/" target="_blank" rel="noopener noreferrer" css={[NavLinkSocial, lastNavLink]}>
+      <img src={linkdinSVG} width="30" height="30" alt="Linkedin" title="Linkedin" />
+    </a>
   </Navbar>
 )
 

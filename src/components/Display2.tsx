@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
+import { SerializedStyles } from '@emotion/core'
 import { getEmSize } from '../styles/mixins'
 import { breakpoints, colors } from '../styles/variables'
 
@@ -58,13 +59,15 @@ const StyledDisplay2 = styled.h2`
           }
     `
   }}
+  ${(props: Display2Props) => props.css}
 `
 
 interface Display2Props {
   hide: boolean
+  css?: string | SerializedStyles
 }
 
-const Display2: React.FC<Display2Props> = ({ children, hide }) => {
+const Display2: React.FC<Display2Props> = ({ children, hide, css }) => {
   React.useEffect(() => {
     // console.log(hide)
   }, [hide])

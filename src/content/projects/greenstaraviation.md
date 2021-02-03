@@ -10,6 +10,4 @@ Greenstar Aviation, a airplane ferrying startup company contracted me to build a
 
 The app used GraphQL, React, Typescript, PostgresQL and redis for cache management.
 
-tags: vue, laravel, php, stripe API,
-
 [Home](/)

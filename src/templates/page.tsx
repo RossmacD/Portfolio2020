@@ -44,30 +44,25 @@ const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => (
       <StickyNav />
       <Container>
         <Row cssClass="margin:0;padding:0;">
-          <Col span={5}>
+          <Col span={6}>
             <Display2
               hide={false}
               css={css`
                 animation: none;
+                font-size: 2.5vw;
               `}
             >
               {data.markdownRemark.frontmatter.title}
             </Display2>
-            <h1
+            <h2
               css={css`
                 margin-bottom: 3rem;
               `}
             >
               {data.markdownRemark.frontmatter.description}
-            </h1>
+            </h2>
             <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
           </Col>
-          {/* <Col span={1} cssClass={`border:${colors.white} solid 1px;padding:1rem 1.5rem;`}>
-            <h5>Other Projects</h5>
-            <ul>
-              <li>Greenstar Aviation</li>
-            </ul>
-          </Col> */}
         </Row>
       </Container>
       <Footer />

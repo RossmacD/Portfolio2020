@@ -130,8 +130,4 @@ This line is separated from the one above by two newlines, so it will be a _sepa
 This line is also a separate paragraph, but...
 This line is only separated by a single newline, so it's a separate line in the _same paragraph_.
 
-Invoice Amigo was a project developed with laravel, vue, pusher and java (Android)
-
-An invoicing web application, developed by Ross MacDonald and Ultan O Nuallain. This is a joint third year project for the proffesional practice module in third year of Creative Computing in IADT. It is built in laravel, and uses the Stripe API and Google OAuth.
-
 [Home](/)
