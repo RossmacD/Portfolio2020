@@ -2,6 +2,7 @@ import * as React from 'react'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
+import { margin } from 'polished'
 import IndexLayout from '../layouts'
 import Page from '../components/Page'
 import { Row } from '../components/Row'
@@ -21,7 +22,11 @@ const Contact = () => (
     <Page>
       <StickyNav />
       <Container>
-        <Row>
+        <Row css={{ marginTop: 0, paddingTop: 0 }}>
+          {/* <h1>Interested in working together or even just having a chat?</h1> */}
+          <Col span={3} css={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <p>Use the form to get in contact straight away or email ross@rossmacd.com</p>
+          </Col>
           <Col span={3}>
             <h1>Contact</h1>
             <p>Name</p>
@@ -31,9 +36,6 @@ const Contact = () => (
             <p>Message</p>
             <textarea rows={8} css={MessageStyle} />
             <input type="submit" />
-          </Col>
-          <Col span={3}>
-            <p>Hire me</p>
           </Col>
         </Row>
       </Container>

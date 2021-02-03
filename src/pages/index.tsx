@@ -100,7 +100,7 @@ const IndexPage = () => {
   // }, [])
   return (
     <IndexLayout>
-      <StickyNav socialOnly />
+      <StickyNav socialOnly sticky={false} />
       <DocflowFix>
         <HeroTitle hide={hideHero} trigger={setHideHero} />
       </DocflowFix>

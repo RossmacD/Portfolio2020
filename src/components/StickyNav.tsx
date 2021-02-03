@@ -10,6 +10,7 @@ const Navbar = styled.nav`
   position: sticky;
   position: -webkit-sticky;
   display: flex;
+  right:0;
   top: 0px;
   z-index: 99999;
   // background: ${colors.black};
@@ -41,8 +42,8 @@ const NavLinkSocial = css`
 const lastNavLink = css`
   margin-right: 5vw;
 `
-const StickyNav = ({ socialOnly = false }) => (
-  <Navbar>
+const StickyNav = ({ socialOnly = false, sticky = true }) => (
+  <Navbar css={{ position: sticky ? 'sticky' : 'fixed' }}>
     {!socialOnly && (
       <>
         <Link
