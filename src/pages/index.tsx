@@ -21,6 +21,7 @@ import { ProjectSvg } from '../assets/Project'
 import Footer from '../components/Footer'
 import { getEmSize } from '../styles/mixins'
 import { Terminal } from '../components/Terminal'
+import StickyNav from '../components/StickyNav'
 // import '@lottiefiles/lottie-player'
 
 // import { animOne } from '../animations/helpers'
@@ -99,6 +100,7 @@ const IndexPage = () => {
   // }, [])
   return (
     <IndexLayout>
+      <StickyNav socialOnly />
       <DocflowFix>
         <HeroTitle hide={hideHero} trigger={setHideHero} />
       </DocflowFix>

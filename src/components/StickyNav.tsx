@@ -39,35 +39,40 @@ const NavLinkSocial = css`
 `
 
 const lastNavLink = css`
-  margin-right: 5rem;
+  margin-right: 5vw;
 `
-const StickyNav = () => (
+const StickyNav = ({ socialOnly = false }) => (
   <Navbar>
-    <Link
-      to="/"
-      css={[
-        NavLink,
-        css`
-          display: inline-block;
-          margin-right: auto;
-        `
-      ]}
-    >
-      {/* <h1
+    {!socialOnly && (
+      <>
+        <Link
+          to="/"
+          css={[
+            NavLink,
+            css`
+              display: inline-block;
+              margin-right: auto;
+            `
+          ]}
+        >
+          {/* <h1
         css={css`
           display: inline-block;
           margin-left: auto;
         `}
       > */}
-      Ross MacD
-      {/* </h1> */}
-    </Link>
-    <Link to="/projects" css={NavLink}>
-      Projects
-    </Link>
-    <Link to="/contact" css={[NavLink]}>
-      Contact
-    </Link>
+          Ross MacD
+          {/* </h1> */}
+        </Link>
+        <Link to="/projects" css={NavLink}>
+          Projects
+        </Link>
+        <Link to="/contact" css={[NavLink]}>
+          Contact
+        </Link>
+      </>
+    )}
+
     <a href="https://github.com/RossmacD" target="_blank" rel="noopener noreferrer" css={[NavLinkSocial]}>
       <img src={githubSVG} width="30" height="30" alt="Github" title="Github" />
     </a>
